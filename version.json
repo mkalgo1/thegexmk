@@ -1,6 +1,6 @@
 {
-  "version": "1.0",
-  "download_url": "https://github.com/mkalgo1/mkgexpro/releases/download/MKGEX/mkgex1.1.exe",
+  "version": "1.1",
+  "download_url": "https://github.com/mkalgo1/thegexmk/releases/download/thegex1%2C2/gex2.exe",
   "release_date": "2026-09-03",
   "changelog": "Added serial code authentication gate () and bumped version to 1.1."
 }
