@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NQU2026 Options Structure & Gamma Monitor</title>
+    <!-- Chart.js for GEX Radar visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
             --bg-gradient: linear-gradient(135deg, #06130C 0%, #081B11 50%, #0B0F0C 100%);
@@ -109,13 +111,7 @@
         }
 
         .card-full {
-            grid-column: span 2;
-        }
-
-        @media (max-width: 1024px) {
-            .card-full {
-                grid-column: span 1;
-            }
+            grid-column: 1 / -1;
         }
 
         .card h2 {
@@ -128,10 +124,12 @@
             align-items: center;
         }
 
-        .regime-text {
-            font-size: 0.938rem;
-            line-height: 1.6;
-            color: #E2E8F0;
+        /* Chart Container */
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 100%;
+            margin-top: 10px;
         }
 
         .levels-table {
@@ -255,21 +253,6 @@
             outline: none;
             border-color: var(--primary-emerald);
         }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 4px;
-            background-color: #07120C;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            width: 65%;
-            height: 100%;
-            background-color: var(--primary-emerald);
-            border-radius: 2px;
-        }
     </style>
 </head>
 <body>
@@ -287,13 +270,11 @@
             </div>
         </header>
 
-        <div class="card" style="padding: 16px 24px; gap: 8px;">
-            <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
-                <span>GAMMA EQUILIBRIUM FLUIDITY</span>
-                <span>NET-POSITIVE REGIME ACTIVE</span>
-            </div>
-            <div class="progress-bar-container">
-                <div class="progress-bar-fill"></div>
+        <!-- GEX Radar Style Chart -->
+        <div class="card card-full">
+            <h2>GEX Radar Profile: Absolute Gamma Exposure by Strike</h2>
+            <div class="chart-container">
+                <canvas id="gexChart"></canvas>
             </div>
         </div>
 
@@ -313,12 +294,12 @@
                         <tr>
                             <td class="call-wall">Primary Call Wall</td>
                             <td>30,100.00</td>
-                            <td>Heavy passive limit-ask stacking / Call-writing overlay</td>
+                            <td>Heavy passive limit-ask stacking</td>
                         </tr>
                         <tr>
                             <td class="call-wall">Secondary Call Wall</td>
                             <td>29,800.00</td>
-                            <td>High delta-notional turnover / Profit-taking zone</td>
+                            <td>High delta-notional turnover</td>
                         </tr>
                         <tr>
                             <td class="call-wall">Minor Resistance</td>
@@ -328,12 +309,12 @@
                         <tr>
                             <td class="anchor-level">Spot Anchor</td>
                             <td>29,420.00</td>
-                            <td>Session POC / 35% total volume node</td>
+                            <td>Session POC / 35% total volume</td>
                         </tr>
                         <tr>
                             <td class="flip-level">Zero-Gamma Flip</td>
                             <td>29,350.00</td>
-                            <td>Critical structural tripwire / Sign boundary</td>
+                            <td>Critical structural tripwire</td>
                         </tr>
                         <tr>
                             <td class="put-wall">Minor Support</td>
@@ -343,12 +324,12 @@
                         <tr>
                             <td class="put-wall">Secondary Put Wall</td>
                             <td>29,100.00</td>
-                            <td>Transitional liquidity shelf / CTA stop triggers</td>
+                            <td>CTA stop triggers</td>
                         </tr>
                         <tr>
-                            <td class="primary-wall">Primary Put Wall</td>
+                            <td class="put-wall">Primary Put Wall</td>
                             <td>28,800.00</td>
-                            <td>Major structural shelf / Short-put gamma liability</td>
+                            <td>Short-put gamma liability</td>
                         </tr>
                     </tbody>
                 </table>
@@ -356,12 +337,12 @@
 
             <div class="card">
                 <h2>Market Regime & Dealer Gamma Impact</h2>
-                <div class="regime-text">
+                <div style="font-size: 0.938rem; line-height: 1.6; color: #E2E8F0;">
                     <p>The NQU2026 options structure operates within a <strong>net-positive gamma regime</strong>, anchored just above the <strong>Zero-Gamma Flip level of 29,350</strong>. In this configuration, options market makers are net-short gamma and maintain long underlying index/futures delta hedges to neutralize their books.</p>
                     <br>
-                    <p>This creates a mechanical, mean-reverting intraday feedback loop: as spot pushes toward the <strong>29,600 minor call wall</strong>, dealers aggressively sell underlying futures into rallies to trim excess delta. Conversely, as price dips toward the <strong>29,300 minor put wall</strong>, dealers buy underlying futures to replenish declining delta, compressing realized volatility and pinning spot within a narrow intraday distribution band.</p>
+                    <p>This creates a mechanical, mean-reverting intraday feedback loop: as spot pushes toward the <strong>29,600 minor call wall</strong>, dealers aggressively sell underlying futures into rallies to trim excess delta. Conversely, as price dips toward the <strong>29,300 minor put wall</strong>, dealers buy underlying futures to replenish declining delta.</p>
                     <br>
-                    <p><strong>Structural Vulnerability:</strong> A sustained breach below the 29,350 Zero-Gamma Flip transforms dealers from a stabilizing force into a pro-cyclical source of momentum, compelling market makers to chase downward price action toward the 29,100 secondary and 28,800 primary put walls.</p>
+                    <p><strong>Structural Vulnerability:</strong> A sustained breach below the 29,350 Zero-Gamma Flip transforms dealers from a stabilizing force into a pro-cyclical source of momentum.</p>
                 </div>
                 <div class="interactive-controls">
                     <input type="text" class="input-field" placeholder="Enter target strike query...">
@@ -377,82 +358,66 @@
                 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title call-wall">Primary Call Wall (30,100.00)</span>
+                        <span class="breakdown-title call-wall">Primary Call (30,100)</span>
                         <span class="breakdown-oi">54,200 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Concentrated across September expiration 30,100 and 30,200 strikes. Thin TPO volume node with heavy passive limit-ask stacking on the DOM, absorbing aggressive market buy orders.
-                    </div>
+                    <div class="breakdown-desc">Thin TPO volume node with heavy passive limit-ask stacking on the DOM, absorbing aggressive market buy orders.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title call-wall">Secondary Call Wall (29,800.00)</span>
+                        <span class="breakdown-title call-wall">Secondary Call (29,800)</span>
                         <span class="breakdown-oi">41,800 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Intermediate volume cluster exhibiting high delta-notional turnover. CVD turns negative on tests of this boundary due to institutional block selling and long futures profit-taking.
-                    </div>
+                    <div class="breakdown-desc">Intermediate volume cluster exhibiting high delta-notional turnover. CVD turns negative on tests of this boundary.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title call-wall">Minor Resistance Call Wall (29,600.00)</span>
+                        <span class="breakdown-title call-wall">Minor Resistance (29,600)</span>
                         <span class="breakdown-oi">31,500 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        High-frequency scalping node with rapid rotation. Intraday tape shows balanced aggressive participation, with short-gamma scalpers actively leaning on bids and offers.
-                    </div>
+                    <div class="breakdown-desc">High-frequency scalping node with rapid rotation. Tape shows balanced aggressive participation.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title anchor-level">Current Spot Anchor (29,420.00)</span>
+                        <span class="breakdown-title anchor-level">Spot Anchor (29,420)</span>
                         <span class="breakdown-oi">38,900 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Aggregated across 29,400 and 29,500 straddles/strangles. High-volume POC for the New York session (>35% session volume). CVD oscillates narrowly around baseline equilibrium.
-                    </div>
+                    <div class="breakdown-desc">High-volume POC for the New York session. CVD oscillates narrowly around baseline equilibrium.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title flip-level">Zero-Gamma Flip Level (29,350.00)</span>
+                        <span class="breakdown-title flip-level">Zero-Gamma Flip (29,350)</span>
                         <span class="breakdown-oi">24,100 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Low-liquidity air pocket on the volume profile. Tape exhibits sudden sweeps and wider bid-ask spreads, acting as an acute structural tripwire where execution slippage scales exponentially.
-                    </div>
+                    <div class="breakdown-desc">Low-liquidity air pocket. Tape exhibits sudden sweeps and wider bid-ask spreads, acting as an acute structural tripwire.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title put-wall">Minor Support Put Wall (29,300.00)</span>
+                        <span class="breakdown-title put-wall">Minor Support (29,300)</span>
                         <span class="breakdown-oi">29,400 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Local volume node displaying aggressive passive bid absorption. Limit-order book data highlights layered resting buy limits defending against downside drift.
-                    </div>
+                    <div class="breakdown-desc">Local volume node displaying aggressive passive bid absorption. Layered resting buy limits defend against downside.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title put-wall">Secondary Put Wall (29,100.00)</span>
+                        <span class="breakdown-title put-wall">Secondary Put (29,100)</span>
                         <span class="breakdown-oi">46,700 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Significant low-volume node shelf acting as a transitional liquidity pocket. Order flow shows institutional put-buying hedges alongside systematic CTA trend-following stop losses.
-                    </div>
+                    <div class="breakdown-desc">Significant low-volume node shelf. Order flow shows institutional put-buying hedges alongside systematic stop losses.</div>
                 </div>
 
                 <div class="breakdown-item">
                     <div class="breakdown-header">
-                        <span class="breakdown-title put-wall">Primary Put Wall (28,800.00)</span>
+                        <span class="breakdown-title put-wall">Primary Put (28,800)</span>
                         <span class="breakdown-oi">71,200 Contracts</span>
                     </div>
-                    <div class="breakdown-desc">
-                        Major structural volume shelf underpinned by massive dealer short-put gamma liabilities. Displays heavy aggressive put-selling absorption and deep passive liquidity replenishment.
-                    </div>
+                    <div class="breakdown-desc">Major structural volume shelf underpinned by massive dealer short-put gamma liabilities. Triggers aggressive short-covering rallies.</div>
                 </div>
 
             </div>
@@ -460,5 +425,96 @@
 
     </div>
 
+    <!-- Chart Configuration Script -->
+    <script>
+        const ctx = document.getElementById('gexChart').getContext('2d');
+        
+        // Puts are represented as negative for visual profile (GEX standard)
+        // Spot and Zero-Gamma are visualized via background color routing in Chart.js or as zero-bar annotations
+        const strikes = ['28,800', '29,100', '29,300', '29,350 (Flip)', '29,420 (Spot)', '29,600', '29,800', '30,100'];
+        const oiData = [-71200, -46700, -29400, -24100, 38900, 31500, 41800, 54200];
+        
+        // Color routing logic based on Put (negative) vs Call (positive) vs Spot/Flip
+        const backgroundColors = oiData.map((val, index) => {
+            if (strikes[index].includes('Spot')) return '#10B981'; // Primary Emerald for Spot
+            if (strikes[index].includes('Flip')) return '#F6E05E'; // Yellow for Gamma Flip
+            return val < 0 ? 'rgba(104, 211, 145, 0.8)' : 'rgba(252, 129, 129, 0.8)'; // Green for Puts, Red for Calls
+        });
+
+        const borderColors = oiData.map((val, index) => {
+            if (strikes[index].includes('Spot')) return '#10B981'; 
+            if (strikes[index].includes('Flip')) return '#F6E05E';
+            return val < 0 ? '#68D391' : '#FC8181';
+        });
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: strikes,
+                datasets: [{
+                    label: 'Net Gamma / Open Interest Profile',
+                    data: oiData,
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: '#0D2016',
+                        titleColor: '#A0AEC0',
+                        bodyColor: '#FFFFFF',
+                        borderColor: '#1E3A2B',
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += Math.abs(context.parsed.y).toLocaleString() + ' Contracts';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: '#162E22',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#A0AEC0',
+                            font: { size: 11 }
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: '#162E22',
+                            zeroLineColor: '#A0AEC0',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#A0AEC0',
+                            callback: function(value) {
+                                return Math.abs(value).toLocaleString(); 
+                            },
+                            font: { size: 11 }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 </html>
