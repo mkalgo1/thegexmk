@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NQU2026 Options Structure & Gamma Dashboard</title>
+    <title>NQU2026 Options Structure & Gamma Monitor</title>
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #3A0B10 0%, #121214 100%);
-            --primary-red: #E50914;
-            --secondary-crimson: #990000;
-            --card-bg: #1E1E22;
-            --card-border: #2E2E34;
-            --btn-fill: #2B2B30;
-            --btn-hover: linear-gradient(135deg, #3D3D45 0%, #5B181B 100%);
-            --btn-text: #EFEFEF;
-            --text-primary: #FAFAFA;
-            --text-muted: #75757C;
-            --input-bg: #161618;
-            --input-border: #2D2D35;
+            --bg-gradient: linear-gradient(135deg, #06130C 0%, #081B11 50%, #0B0F0C 100%);
+            --primary-emerald: #10B981;
+            --emerald-hover: #059669;
+            --card-bg: #07120C;
+            --card-border: #162E22;
+            --btn-fill: #1E3A2B;
+            --btn-hover: #264B38;
+            --btn-text: #FFFFFF;
+            --text-primary: #FFFFFE;
+            --text-muted: #A0AEC0;
+            --input-bg: #0D2016;
+            --input-border: #1E3A2B;
         }
 
         * {
@@ -28,8 +28,7 @@
         }
 
         body {
-            background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #4A0E13, stop:0.6 #1A080A, stop:1 #0F0F12);
-            background: linear-gradient(135deg, #3A0B10 0%, #121214 100%);
+            background: var(--bg-gradient);
             color: var(--text-primary);
             min-height: 100vh;
             padding: 24px;
@@ -46,7 +45,7 @@
         header {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 20px 24px;
             display: flex;
             justify-content: space-between;
@@ -67,13 +66,12 @@
 
         .spot-badge {
             background: var(--input-bg);
-            border: 1px solid var(--primary-red);
+            border: 1px solid var(--primary-emerald);
             padding: 10px 18px;
-            border-radius: 8px;
+            border-radius: 5px;
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            animation: pulse-border 1200ms infinite ease-in-out;
         }
 
         .spot-badge .label {
@@ -85,7 +83,7 @@
         .spot-badge .value {
             font-size: 1.25rem;
             font-weight: 700;
-            color: var(--primary-red);
+            color: var(--primary-emerald);
         }
 
         .grid-layout {
@@ -103,7 +101,7 @@
         .card {
             background: var(--card-bg);
             border: 1px solid var(--card-border);
-            border-radius: 12px;
+            border-radius: 10px;
             padding: 24px;
             display: flex;
             flex-direction: column;
@@ -133,7 +131,7 @@
         .regime-text {
             font-size: 0.938rem;
             line-height: 1.6;
-            color: #D1D1D6;
+            color: #E2E8F0;
         }
 
         .levels-table {
@@ -156,13 +154,13 @@
         }
 
         .levels-table tr:hover {
-            background: rgba(229, 9, 20, 0.04);
+            background: rgba(16, 185, 129, 0.04);
         }
 
-        .call-wall { color: #FF6B6B; font-weight: 600; }
-        .put-wall { color: #4CD137; font-weight: 600; }
-        .flip-level { color: #FBC531; font-weight: 600; }
-        .anchor-level { color: var(--primary-red); font-weight: 600; }
+        .call-wall { color: #FC8181; font-weight: 600; }
+        .put-wall { color: #68D391; font-weight: 600; }
+        .flip-level { color: #F6E05E; font-weight: 600; }
+        .anchor-level { color: var(--primary-emerald); font-weight: 600; }
 
         .breakdown-grid {
             display: grid;
@@ -173,7 +171,7 @@
         .breakdown-item {
             background: var(--input-bg);
             border: 1px solid var(--input-border);
-            border-radius: 8px;
+            border-radius: 5px;
             padding: 16px;
             display: flex;
             flex-direction: column;
@@ -182,7 +180,7 @@
         }
 
         .breakdown-item:hover {
-            border-color: var(--primary-red);
+            border-color: var(--primary-emerald);
         }
 
         .breakdown-header {
@@ -199,14 +197,15 @@
         .breakdown-oi {
             font-size: 0.75rem;
             color: var(--text-muted);
-            background: #202025;
+            background: #07150E;
             padding: 4px 8px;
-            border-radius: 4px;
+            border-radius: 3px;
+            border: 1px solid #1E3A2B;
         }
 
         .breakdown-desc {
             font-size: 0.813rem;
-            color: #A1A1AA;
+            color: #CBD5E0;
             line-height: 1.5;
         }
 
@@ -217,68 +216,59 @@
         }
 
         .btn {
-            background: var(--btn-fill);
-            color: var(--btn-text);
-            border: 1px solid #3E3E46;
-            border-radius: 8px;
-            padding: 10px 18px;
+            background-color: var(--btn-fill);
+            color: #FFFFFF;
+            border: 1px solid #2A523D;
+            border-radius: 5px;
+            padding: 6px 12px;
             font-size: 0.875rem;
             cursor: pointer;
-            transition: all 180ms cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background-color 180ms ease-in-out;
         }
 
         .btn:hover {
-            background: var(--btn-hover);
-            border-color: var(--primary-red);
+            background-color: var(--btn-hover);
         }
 
-        .btn:active {
-            background: #1A1A1E;
-            border-color: var(--secondary-crimson);
+        .btn-primary {
+            background-color: #10B981;
+            color: #04120A;
+            border: none;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #059669;
         }
 
         .input-field {
-            background: var(--input-bg);
+            background-color: var(--input-bg);
             border: 1px solid var(--input-border);
-            border-radius: 8px;
-            padding: 10px 14px;
+            border-radius: 5px;
+            padding: 6px 10px;
             color: #FFFFFF;
             font-size: 0.875rem;
             width: 100%;
-            transition: border-color 180ms ease-in-out;
         }
 
         .input-field:focus {
             outline: none;
-            border-color: var(--primary-red);
+            border-color: var(--primary-emerald);
         }
 
         .progress-bar-container {
             width: 100%;
-            height: 6px;
-            background: #2B2B30;
-            border-radius: 3px;
+            height: 4px;
+            background-color: #07120C;
+            border-radius: 2px;
             overflow: hidden;
-            position: relative;
         }
 
         .progress-bar-fill {
             width: 65%;
             height: 100%;
-            background: linear-gradient(90deg, #2B2B30 0%, var(--primary-red) 50%, #2B2B30 100%);
-            background-size: 200% 100%;
-            animation: progress-pulse 2000ms infinite linear;
-        }
-
-        @keyframes pulse-border {
-            0% { border-color: rgba(229, 9, 20, 0.4); }
-            50% { border-color: rgba(229, 9, 20, 1.0); }
-            100% { border-color: rgba(229, 9, 20, 0.4); }
-        }
-
-        @keyframes progress-pulse {
-            0% { background-position: 100% 0; }
-            100% { background-position: -100% 0; }
+            background-color: var(--primary-emerald);
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -375,7 +365,7 @@
                 </div>
                 <div class="interactive-controls">
                     <input type="text" class="input-field" placeholder="Enter target strike query...">
-                    <button class="btn">Query DOM</button>
+                    <button class="btn btn-primary" id="btn_get_levels">Query DOM</button>
                 </div>
             </div>
 
