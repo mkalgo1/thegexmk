@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QQQ Options Structure & Gamma Monitor</title>
+    <title>NQ Executive Bias & Trading Plan</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -126,7 +126,7 @@
         /* Chart Container */
         .chart-container {
             position: relative;
-            height: 420px;
+            height: 400px;
             width: 100%;
             margin-top: 10px;
         }
@@ -137,7 +137,7 @@
         }
 
         .levels-table th, .levels-table td {
-            padding: 10px 12px;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid var(--card-border);
             font-size: 0.875rem;
@@ -156,7 +156,7 @@
 
         .call-wall { color: #FC8181; font-weight: 600; }
         .put-wall { color: #68D391; font-weight: 600; }
-        .flip-level { color: #F6E05E; font-weight: 600; }
+        .anchor-level { color: var(--primary-emerald); font-weight: 600; }
 
         .protocol-grid {
             display: grid;
@@ -190,6 +190,18 @@
             font-size: 0.875rem;
             color: #CBD5E0;
             line-height: 1.5;
+        }
+
+        .bias-badge {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--primary-emerald);
+            color: var(--primary-emerald);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 8px;
         }
 
         .regime-text {
@@ -252,152 +264,71 @@
         
         <header>
             <div class="title-group">
-                <h1>QQQ Options Structure & Gamma Monitor</h1>
-                <p>Executive Market Structure & Gamma Exposure Report — Invesco QQQ Trust</p>
+                <h1>Nasdaq-100 (NQ) Executive Bias & Trading Plan</h1>
+                <p>24-48 Hour Tactical Market Structure Intelligence</p>
             </div>
             <div class="spot-badge">
-                <span class="label">Zero Gamma / Flip Level</span>
-                <span class="value" style="color: #F6E05E;">$718.00 - $720.00</span>
+                <span class="label">Volume POC Reference</span>
+                <span class="value">29,575</span>
             </div>
         </header>
 
         <div class="card card-full">
-            <h2>GEX Radar Profile: QQQ Resistance & Support Node Distribution</h2>
-            <div class="chart-container">
-                <canvas id="gexChart"></canvas>
+            <h2>Executive Strategic Summary</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div>
+                    <span class="bias-badge">Executive Bias: Long (7/10 Conviction)</span>
+                </div>
+                <div class="regime-text">
+                    <p>Optimized for the next 24-48 hours, driven by supportive macro tailwinds, rising institutional long positioning, and a constructive technical structure.</p>
+                </div>
             </div>
         </div>
 
         <div class="grid-layout">
             
             <div class="card">
-                <h2>Executive Overview & Gamma Regime</h2>
-                <div class="regime-text">
-                    <p><strong>Primary Market State:</strong> Positive Gamma Regime (Net Positive GEX ~+$601M per 1% move across front-week expiration).</p>
-                    <br>
-                    <p><strong>Structural Mechanics:</strong> The QQQ options complex reflects the underlying tech-heavy Nasdaq-100 footprint, operating in a long gamma regime. Market makers are net long calls overall, meaning dealer hedging flows actively damp volatility.</p>
-                    <br>
-                    <p><strong>Upside Hedging:</strong> As QQQ moves up toward overhead call walls, dealers sell underlying shares/futures to lock in gains and stay delta-neutral.</p>
-                    <br>
-                    <p><strong>Downside Hedging:</strong> As QQQ drops toward high-volume put strike clusters, dealers buy underlying shares/futures to absorb downside momentum.</p>
-                    <br>
-                    <p><strong>Execution Environment:</strong> Expect range-bound, mean-reverting price action with lower intraday volatility unless a major catalyst forces short-covering above the primary Call Wall.</p>
+                <h2>Key Drivers & Internals</h2>
+                <div class="regime-text" style="display: flex; flex-direction: column; gap: 12px;">
+                    <p><strong>Macro:</strong> 10-year yields flat at 4.15%; DXY softening slightly to 104.20 (net positive for tech); anchored inflation expectations (2.60% breakevens).</p>
+                    <p><strong>Flows & Sentiment:</strong> COT managed money net longs up 8% weekly; moderate OTM call buying; steady tech ETF inflows.</p>
+                    <p><strong>Technicals:</strong> NQ trading above rising 20-day (29,520), 50-day, and 200-day EMAs; volume concentrated around the 29,575 POC.</p>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Core Structural Gamma Anchors</h2>
-                <table class="levels-table">
-                    <thead>
-                        <tr>
-                            <th>Level Type</th>
-                            <th>Price Threshold</th>
-                            <th>Structural Role & Dynamics</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="call-wall">Primary Call Wall</td>
-                            <td>$730.00</td>
-                            <td>Absolute Upside Ceiling: Peak call open interest and maximum call GEX concentration. Heavy dealer selling on retests.</td>
-                        </tr>
-                        <tr>
-                            <td class="call-wall">Secondary Call Resistance</td>
-                            <td>$725.00</td>
-                            <td>Intraday Profit Target: Intermediate 0DTE / weekly call concentration pin.</td>
-                        </tr>
-                        <tr>
-                            <td class="flip-level">Zero Gamma / Flip</td>
-                            <td>$718.00 - $720.00</td>
-                            <td>Regime Pivot: Key switching boundary. Below $718, dealer hedging flips short gamma (amplified downside).</td>
-                        </tr>
-                        <tr>
-                            <td class="put-wall">Primary Put Wall</td>
-                            <td>$700.00</td>
-                            <td>Institutional Floor: Maximum put open interest / Peak GEX strike acting as a deep downside magnet.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <h2>Trading Plan & Execution Levels</h2>
+                <div class="protocol-grid" style="grid-template-columns: 1fr; gap: 12px;">
+                    <div class="protocol-box">
+                        <span class="protocol-title">Primary Long Setup</span>
+                        <div class="protocol-desc">
+                            <strong>Action:</strong> Enter on a break/hold above <strong>29,600</strong><br>
+                            <strong>Stop Loss:</strong> 29,450<br>
+                            <strong>Targets:</strong> 29,850 and 29,950
+                        </div>
+                    </div>
 
-        </div>
-
-        <div class="grid-layout">
-            
-            <div class="card">
-                <h2>Upside Resistance Nodes (Call Walls)</h2>
-                <table class="levels-table">
-                    <thead>
-                        <tr>
-                            <th>Strike</th>
-                            <th>Structural Role & Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class="call-wall">$735.00</td><td>Outer Volatility Expansion Zone</td></tr>
-                        <tr><td class="call-wall">$732.00</td><td>Extended Call Sweep Concentration</td></tr>
-                        <tr><td class="call-wall">$730.00</td><td>Primary Call Wall / Institutional Cap</td></tr>
-                        <tr><td class="call-wall">$728.00</td><td>Upper Range Absorption Barrier</td></tr>
-                        <tr><td class="call-wall">$725.00</td><td>Secondary Call Wall / High Call Gamma Cluster</td></tr>
-                        <tr><td class="call-wall">$722.00</td><td>Near-the-Money Resistance Node</td></tr>
-                        <tr><td class="call-wall">$720.00</td><td>Intermediate Gamma Pivot / Call Barrier</td></tr>
-                        <tr><td class="call-wall">$718.00</td><td>Zero Gamma Upper Threshold / Local Supply</td></tr>
-                        <tr><td class="call-wall">$717.00</td><td>Immediate Overhead Intraday Level</td></tr>
-                        <tr><td class="call-wall">$715.00</td><td>Near-Term Gamma Absorption Level</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card">
-                <h2>Downside Support Nodes (Put Walls)</h2>
-                <table class="levels-table">
-                    <thead>
-                        <tr>
-                            <th>Strike</th>
-                            <th>Structural Role & Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td class="put-wall">$713.00</td><td>Near-the-Money Support Node</td></tr>
-                        <tr><td class="put-wall">$710.00</td><td>Intraday Put Concentration Support</td></tr>
-                        <tr><td class="put-wall">$707.00</td><td>Local Buyer Absorption Zone</td></tr>
-                        <tr><td class="put-wall">$705.00</td><td>Intermediate High-Volume Put Cluster</td></tr>
-                        <tr><td class="put-wall">$702.00</td><td>Sub-Regime Defensive Layer</td></tr>
-                        <tr><td class="put-wall">$700.00</td><td>Primary Macro Put Wall / Structural Floor</td></tr>
-                        <tr><td class="put-wall">$695.00</td><td>Deep OTM Defensive Put Buffer</td></tr>
-                        <tr><td class="put-wall">$690.00</td><td>Lower Range Expansion Level</td></tr>
-                        <tr><td class="put-wall">$685.00</td><td>Macro Liquidity Pool</td></tr>
-                        <tr><td class="put-wall">$680.00</td><td>Major Tail-Risk Put Wall Floor</td></tr>
-                    </tbody>
-                </table>
+                    <div class="protocol-box" style="border-color: #2A523D;">
+                        <span class="protocol-title" style="color: #FC8181;">Alternative Short Setup</span>
+                        <div class="protocol-desc">
+                            <strong>Action:</strong> Flip short only on a confirmed breakdown below <strong>29,450</strong><br>
+                            <strong>Stop Loss:</strong> 29,600<br>
+                            <strong>Target:</strong> 29,300
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
 
         <div class="card card-full">
-            <h2>Execution & Strategy Framework</h2>
-            <div class="protocol-grid">
-                
-                <div class="protocol-box">
-                    <span class="protocol-title">Scenario A: Positive Gamma Mean-Reversion (Above $718.00)</span>
-                    <div class="protocol-desc">
-                        <strong>Playbook:</strong> Fade extended momentum moves toward overhead call strikes.<br><br>
-                        <strong>Execution:</strong> If price rallies into $725.00 – $730.00, look for order flow delta exhaustion or CVD absorption to fade back down toward value area nodes ($718 – $720).
-                    </div>
-                </div>
-
-                <div class="protocol-box">
-                    <span class="protocol-title">Scenario B: Regime Shift / Short Gamma Breakout (Below $718.00)</span>
-                    <div class="protocol-desc">
-                        <strong>Playbook:</strong> Transition from mean-reversion to trend-following / breakout strategy.<br><br>
-                        <strong>Execution:</strong> Acceptance below $718.00 pushes dealers into a short gamma state. Look for downside momentum entries targeting lower put nodes ($710.00 and $700.00 Put Wall).
-                    </div>
-                </div>
-
+            <h2>Tactical Level Distribution & Execution Zones</h2>
+            <div class="chart-container">
+                <canvas id="gexChart"></canvas>
             </div>
-            <div class="interactive-controls" style="margin-top: 16px;">
-                <input type="text" class="input-field" placeholder="Enter custom QQQ strike node to query...">
-                <button class="btn btn-primary" id="btn_get_levels">Query QQQ DOM</button>
+            <div class="interactive-controls" style="margin-top: 12px;">
+                <input type="text" class="input-field" placeholder="Enter custom NQ price node...">
+                <button class="btn btn-primary" id="btn_get_levels">Validate Node Matrix</button>
             </div>
         </div>
 
@@ -406,38 +337,28 @@
     <script>
         const ctx = document.getElementById('gexChart').getContext('2d');
         
-        // QQQ Strikes ladder mapping puts (negative) and calls (positive) relative to $718-$720 Flip
-        const strikes = [
-            '$680', '$685', '$690', '$695', '$700', 
-            '$702', '$705', '$707', '$710', '$713', 
-            '$715', '$717', '$718 (Flip)', '$720', '$722', 
-            '$725', '$728', '$730', '$732', '$735'
-        ];
+        const levels = ['29,300 (Target Short)', '29,450 (Stop / Break)', '29,520 (20 EMA)', '29,575 (POC)', '29,600 (Trigger Long)', '29,850 (Target 1)', '29,950 (Target 2)'];
+        const values = [-45000, -25000, 35000, 65000, 75000, 85000, 95000];
         
-        const oiData = [
-            -98000, -64000, -45000, -52000, -115000, 
-            -41000, -78000, -39000, -82000, -31000, 
-            28000, 35000, -15000, 48000, 52000, 
-            85000, 41000, 110000, 39000, 42000
-        ];
-        
-        const backgroundColors = strikes.map((strike, index) => {
-            if (strike.includes('Flip')) return '#F6E05E';
-            return oiData[index] < 0 ? 'rgba(104, 211, 145, 0.8)' : 'rgba(252, 129, 129, 0.8)';
+        const backgroundColors = levels.map((lvl) => {
+            if (lvl.includes('Long') || lvl.includes('Target 1') || lvl.includes('Target 2')) return 'rgba(16, 185, 129, 0.8)';
+            if (lvl.includes('Short')) return 'rgba(252, 129, 129, 0.8)';
+            return '#1E3A2B';
         });
 
-        const borderColors = strikes.map((strike, index) => {
-            if (strike.includes('Flip')) return '#F6E05E';
-            return oiData[index] < 0 ? '#68D391' : '#FC8181';
+        const borderColors = levels.map((lvl) => {
+            if (lvl.includes('Long') || lvl.includes('Target 1') || lvl.includes('Target 2')) return '#10B981';
+            if (lvl.includes('Short')) return '#FC8181';
+            return '#2A523D';
         });
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: strikes,
+                labels: levels,
                 datasets: [{
-                    label: 'Gamma Exposure Notional Profile',
-                    data: oiData,
+                    label: 'Tactical Node Weight',
+                    data: values,
                     backgroundColor: backgroundColors,
                     borderColor: borderColors,
                     borderWidth: 1,
@@ -448,49 +369,25 @@
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: {
-                        display: false
-                    },
+                    legend: { display: false },
                     tooltip: {
                         backgroundColor: '#0D2016',
                         titleColor: '#A0AEC0',
                         bodyColor: '#FFFFFF',
                         borderColor: '#1E3A2B',
-                        borderWidth: 1,
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.dataset.label || '';
-                                if (label) { label += ': '; }
-                                if (context.parsed.y !== null) {
-                                    label += Math.abs(context.parsed.y).toLocaleString() + ' GEX Impact';
-                                }
-                                return label;
-                            }
-                        }
+                        borderWidth: 1
                     }
                 },
                 scales: {
                     x: {
-                        grid: {
-                            color: '#162E22',
-                            drawBorder: false
-                        },
-                        ticks: {
-                            color: '#A0AEC0',
-                            font: { size: 10 }
-                        }
+                        grid: { color: '#162E22', drawBorder: false },
+                        ticks: { color: '#A0AEC0', font: { size: 11 } }
                     },
                     y: {
-                        grid: {
-                            color: '#162E22',
-                            zeroLineColor: '#F6E05E',
-                            drawBorder: false
-                        },
+                        grid: { color: '#162E22', drawBorder: false },
                         ticks: {
                             color: '#A0AEC0',
-                            callback: function(value) {
-                                return Math.abs(value).toLocaleString(); 
-                            },
+                            callback: function(value) { return Math.abs(value).toLocaleString(); },
                             font: { size: 11 }
                         }
                     }
