@@ -1,7 +1,0 @@
-{
-  "user_info": {
-    "name": "robert",
-    "email": "alex@mail.com"
-  },
-  "chat": []
-}
