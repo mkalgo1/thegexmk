@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESU2026 / SPX Options Structure & Gamma Monitor</title>
+    <title>QQQ Options Structure & Gamma Monitor</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -252,17 +252,17 @@
         
         <header>
             <div class="title-group">
-                <h1>ESU2026 / SPX Options Structure & Gamma Monitor</h1>
-                <p>Executive Market Structure & Gamma Exposure Report</p>
+                <h1>QQQ Options Structure & Gamma Monitor</h1>
+                <p>Executive Market Structure & Gamma Exposure Report — Invesco QQQ Trust</p>
             </div>
             <div class="spot-badge">
                 <span class="label">Zero Gamma / Flip Level</span>
-                <span class="value" style="color: #F6E05E;">5,680.00</span>
+                <span class="value" style="color: #F6E05E;">$718.00 - $720.00</span>
             </div>
         </header>
 
         <div class="card card-full">
-            <h2>GEX Radar Profile: ESU2026 Resistance & Support Node Distribution</h2>
+            <h2>GEX Radar Profile: QQQ Resistance & Support Node Distribution</h2>
             <div class="chart-container">
                 <canvas id="gexChart"></canvas>
             </div>
@@ -273,15 +273,15 @@
             <div class="card">
                 <h2>Executive Overview & Gamma Regime</h2>
                 <div class="regime-text">
-                    <p><strong>Primary Market State:</strong> Positive Gamma Regime (+ $1.2B to + $2.7B GEX across the primary S&P complex)</p>
+                    <p><strong>Primary Market State:</strong> Positive Gamma Regime (Net Positive GEX ~+$601M per 1% move across front-week expiration).</p>
                     <br>
-                    <p><strong>Structural Mechanics:</strong> The S&P 500 / ES options complex is anchored in a long gamma regime. Market makers are net long options delta, meaning dealer hedging flows act as an intraday volatility dampener.</p>
+                    <p><strong>Structural Mechanics:</strong> The QQQ options complex reflects the underlying tech-heavy Nasdaq-100 footprint, operating in a long gamma regime. Market makers are net long calls overall, meaning dealer hedging flows actively damp volatility.</p>
                     <br>
-                    <p><strong>Upside Hedging:</strong> As ES price expands toward overhead strike barriers, dealers short ES futures to maintain delta neutrality.</p>
+                    <p><strong>Upside Hedging:</strong> As QQQ moves up toward overhead call walls, dealers sell underlying shares/futures to lock in gains and stay delta-neutral.</p>
                     <br>
-                    <p><strong>Downside Hedging:</strong> As ES price pulls back into key put strike clusters, dealers buy ES futures to absorb selling pressure.</p>
+                    <p><strong>Downside Hedging:</strong> As QQQ drops toward high-volume put strike clusters, dealers buy underlying shares/futures to absorb downside momentum.</p>
                     <br>
-                    <p><strong>Execution Environment:</strong> Mean-reverting price action, tight consolidation around high open-interest nodes, and responsive rotation at value area boundaries.</p>
+                    <p><strong>Execution Environment:</strong> Expect range-bound, mean-reverting price action with lower intraday volatility unless a major catalyst forces short-covering above the primary Call Wall.</p>
                 </div>
             </div>
 
@@ -291,30 +291,30 @@
                     <thead>
                         <tr>
                             <th>Level Type</th>
-                            <th>Price</th>
+                            <th>Price Threshold</th>
                             <th>Structural Role & Dynamics</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td class="call-wall">Primary Call Wall</td>
-                            <td>5,800.00</td>
-                            <td>Absolute Upside Ceiling: Peak call gamma concentration. Dealers dump futures on retests.</td>
+                            <td>$730.00</td>
+                            <td>Absolute Upside Ceiling: Peak call open interest and maximum call GEX concentration. Heavy dealer selling on retests.</td>
                         </tr>
                         <tr>
                             <td class="call-wall">Secondary Call Resistance</td>
-                            <td>5,750.00</td>
-                            <td>Intraday Profit Target: High concentration of 0DTE/short-dated call open interest.</td>
+                            <td>$725.00</td>
+                            <td>Intraday Profit Target: Intermediate 0DTE / weekly call concentration pin.</td>
                         </tr>
                         <tr>
                             <td class="flip-level">Zero Gamma / Flip</td>
-                            <td>5,680.00</td>
-                            <td>Regime Pivot: Below this mark, market maker gamma switches to negative.</td>
+                            <td>$718.00 - $720.00</td>
+                            <td>Regime Pivot: Key switching boundary. Below $718, dealer hedging flips short gamma (amplified downside).</td>
                         </tr>
                         <tr>
                             <td class="put-wall">Primary Put Wall</td>
-                            <td>5,600.00</td>
-                            <td>Institutional Floor: Heavy put open interest providing systematic dealer buy absorption.</td>
+                            <td>$700.00</td>
+                            <td>Institutional Floor: Maximum put open interest / Peak GEX strike acting as a deep downside magnet.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -334,16 +334,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td class="call-wall">5,800.00</td><td>Primary Macro Call Wall / Institutional Cap</td></tr>
-                        <tr><td class="call-wall">5,785.00</td><td>Outer Expected Move (+2&sigma;) Boundary</td></tr>
-                        <tr><td class="call-wall">5,765.00</td><td>Upper Volatility Band Target</td></tr>
-                        <tr><td class="call-wall">5,750.00</td><td>Secondary Call Wall / High OI Concentration</td></tr>
-                        <tr><td class="call-wall">5,735.00</td><td>Intraday Acceleration Barrier</td></tr>
-                        <tr><td class="call-wall">5,720.00</td><td>Near-the-Money Resistance Node</td></tr>
-                        <tr><td class="call-wall">5,710.00</td><td>Local Supply / Dealer Short Delta Zone</td></tr>
-                        <tr><td class="call-wall">5,700.00</td><td>Intermediate Psychological Pin</td></tr>
-                        <tr><td class="call-wall">5,690.00</td><td>Immediate Intraday Overhead Supply</td></tr>
-                        <tr><td class="call-wall">5,685.00</td><td>Near-Term Gamma Pivot / Resistance Target</td></tr>
+                        <tr><td class="call-wall">$735.00</td><td>Outer Volatility Expansion Zone</td></tr>
+                        <tr><td class="call-wall">$732.00</td><td>Extended Call Sweep Concentration</td></tr>
+                        <tr><td class="call-wall">$730.00</td><td>Primary Call Wall / Institutional Cap</td></tr>
+                        <tr><td class="call-wall">$728.00</td><td>Upper Range Absorption Barrier</td></tr>
+                        <tr><td class="call-wall">$725.00</td><td>Secondary Call Wall / High Call Gamma Cluster</td></tr>
+                        <tr><td class="call-wall">$722.00</td><td>Near-the-Money Resistance Node</td></tr>
+                        <tr><td class="call-wall">$720.00</td><td>Intermediate Gamma Pivot / Call Barrier</td></tr>
+                        <tr><td class="call-wall">$718.00</td><td>Zero Gamma Upper Threshold / Local Supply</td></tr>
+                        <tr><td class="call-wall">$717.00</td><td>Immediate Overhead Intraday Level</td></tr>
+                        <tr><td class="call-wall">$715.00</td><td>Near-Term Gamma Absorption Level</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -358,16 +358,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td class="put-wall">5,675.00</td><td>Immediate Support / Near-the-Money Strike</td></tr>
-                        <tr><td class="put-wall">5,660.00</td><td>Local Volume Point of Control (VPOC)</td></tr>
-                        <tr><td class="put-wall">5,650.00</td><td>Intraday High-Volume Put Concentration Node</td></tr>
-                        <tr><td class="put-wall">5,635.00</td><td>Intermediate Buyer Absorption Zone</td></tr>
-                        <tr><td class="put-wall">5,620.00</td><td>Secondary Defensive Put Layer</td></tr>
-                        <tr><td class="put-wall">5,610.00</td><td>Lower Expected Move (-1&sigma;) Boundary</td></tr>
-                        <tr><td class="put-wall">5,600.00</td><td>Primary Macro Put Wall / Structural Support Floor</td></tr>
-                        <tr><td class="put-wall">5,580.00</td><td>Deep OTM Defensive Put Buffer</td></tr>
-                        <tr><td class="put-wall">5,550.00</td><td>Macro Downside Liquidity Pool</td></tr>
-                        <tr><td class="put-wall">5,500.00</td><td>Major Tail-Risk Put Wall Floor</td></tr>
+                        <tr><td class="put-wall">$713.00</td><td>Near-the-Money Support Node</td></tr>
+                        <tr><td class="put-wall">$710.00</td><td>Intraday Put Concentration Support</td></tr>
+                        <tr><td class="put-wall">$707.00</td><td>Local Buyer Absorption Zone</td></tr>
+                        <tr><td class="put-wall">$705.00</td><td>Intermediate High-Volume Put Cluster</td></tr>
+                        <tr><td class="put-wall">$702.00</td><td>Sub-Regime Defensive Layer</td></tr>
+                        <tr><td class="put-wall">$700.00</td><td>Primary Macro Put Wall / Structural Floor</td></tr>
+                        <tr><td class="put-wall">$695.00</td><td>Deep OTM Defensive Put Buffer</td></tr>
+                        <tr><td class="put-wall">$690.00</td><td>Lower Range Expansion Level</td></tr>
+                        <tr><td class="put-wall">$685.00</td><td>Macro Liquidity Pool</td></tr>
+                        <tr><td class="put-wall">$680.00</td><td>Major Tail-Risk Put Wall Floor</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -379,25 +379,25 @@
             <div class="protocol-grid">
                 
                 <div class="protocol-box">
-                    <span class="protocol-title">Scenario A: Positive Gamma Mean-Reversion (Above 5,680.00)</span>
+                    <span class="protocol-title">Scenario A: Positive Gamma Mean-Reversion (Above $718.00)</span>
                     <div class="protocol-desc">
-                        <strong>Playbook:</strong> Fade extended moves into outer Call GEX strikes.<br><br>
-                        <strong>Execution:</strong> Monitor order flow (Cumulative Volume Delta and Footprint chart absorption) when price tests 5,720 – 5,750. Look for passive sell absorption to trade mean-reversion pullbacks back toward key volume nodes.
+                        <strong>Playbook:</strong> Fade extended momentum moves toward overhead call strikes.<br><br>
+                        <strong>Execution:</strong> If price rallies into $725.00 – $730.00, look for order flow delta exhaustion or CVD absorption to fade back down toward value area nodes ($718 – $720).
                     </div>
                 </div>
 
                 <div class="protocol-box">
-                    <span class="protocol-title">Scenario B: Regime Shift / Short Gamma Breakout (Below 5,680.00)</span>
+                    <span class="protocol-title">Scenario B: Regime Shift / Short Gamma Breakout (Below $718.00)</span>
                     <div class="protocol-desc">
-                        <strong>Playbook:</strong> Transition to trend-following and momentum breakout strategies.<br><br>
-                        <strong>Execution:</strong> A clean 15-minute acceptance below the 5,680.00 Gamma Flip signals dealer hedging shifts from stabilizing to destabilizing. As dealers sell into falling prices to stay neutral, look for downside continuation targets toward 5,650 and 5,600.
+                        <strong>Playbook:</strong> Transition from mean-reversion to trend-following / breakout strategy.<br><br>
+                        <strong>Execution:</strong> Acceptance below $718.00 pushes dealers into a short gamma state. Look for downside momentum entries targeting lower put nodes ($710.00 and $700.00 Put Wall).
                     </div>
                 </div>
 
             </div>
             <div class="interactive-controls" style="margin-top: 16px;">
-                <input type="text" class="input-field" placeholder="Enter custom ESU2026 strike node to query...">
-                <button class="btn btn-primary" id="btn_get_levels">Query ESU2026 DOM</button>
+                <input type="text" class="input-field" placeholder="Enter custom QQQ strike node to query...">
+                <button class="btn btn-primary" id="btn_get_levels">Query QQQ DOM</button>
             </div>
         </div>
 
@@ -406,19 +406,19 @@
     <script>
         const ctx = document.getElementById('gexChart').getContext('2d');
         
-        // ESU2026 Strikes ladder mapping puts (negative) and calls (positive) relative to 5,680 Flip
+        // QQQ Strikes ladder mapping puts (negative) and calls (positive) relative to $718-$720 Flip
         const strikes = [
-            '5,500', '5,550', '5,580', '5,600', '5,610', 
-            '5,620', '5,635', '5,650', '5,660', '5,675', 
-            '5,680 (Flip)', '5,685', '5,690', '5,700', '5,710', 
-            '5,720', '5,735', '5,750', '5,765', '5,785', '5,800'
+            '$680', '$685', '$690', '$695', '$700', 
+            '$702', '$705', '$707', '$710', '$713', 
+            '$715', '$717', '$718 (Flip)', '$720', '$722', 
+            '$725', '$728', '$730', '$732', '$735'
         ];
         
         const oiData = [
-            -95000, -72000, -51000, -110000, -42000, 
-            -55000, -48000, -88000, -41000, -32000, 
-            -18000, 31000, 39000, 47000, 53000, 
-            61000, 52000, 89000, 44000, 38000, 105000
+            -98000, -64000, -45000, -52000, -115000, 
+            -41000, -78000, -39000, -82000, -31000, 
+            28000, 35000, -15000, 48000, 52000, 
+            85000, 41000, 110000, 39000, 42000
         ];
         
         const backgroundColors = strikes.map((strike, index) => {
