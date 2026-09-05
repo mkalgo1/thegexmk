@@ -3,5 +3,10 @@
     "name": "mk",
     "email": "mail@mail.com"
   },
-  "chat": []
+  "chat": [
+    {
+      "sender": "client",
+      "text": "hallo"
+    }
+  ]
 }
