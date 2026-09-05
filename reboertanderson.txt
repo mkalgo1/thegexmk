@@ -1,12 +1,15 @@
 {
   "user_info": {
-    "name": "reboertanderson",
-    "email": "mail@mail.com"
+    "name": "reboertanderson"
   },
   "chat": [
     {
       "sender": "client",
       "text": "test"
+    },
+    {
+      "sender": "agent",
+      "text": "test11"
     }
   ]
 }
