@@ -1,1 +1,1 @@
-miley@mail.com,123456,active
+miley@mail.com,123456,inactive
