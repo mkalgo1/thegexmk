@@ -4,4 +4,4 @@ user21@,ail.com,123456,inactive
 sarah@mail.com,123456,inactive
 joe@mail.com,123456,inactive
 jemmy@hotmial.com,jemmy123,inactive
-aliklay@hotmail.com,aliklay123,active
+aliklay@hotmail.com,klay123,active
