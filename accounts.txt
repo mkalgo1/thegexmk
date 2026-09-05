@@ -1,4 +1,3 @@
 user1@,ail.com,123456,fullname,phonenumber,dateofbirth,country
-mickel@mail.com,1234567,michel angelo,+332452352354,2000-01-01,Fr
 jemmy@hotmial.com,jemmy123,jemmyanderson,+34234234234,2000-01-01,Italy
 aliklay@hotmail.com,ali1234,Ali klay,+21223423424,2000-01-01,Morroco
