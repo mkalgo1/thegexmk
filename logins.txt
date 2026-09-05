@@ -1,1 +1,3 @@
-
+mail,password,statu
+user1@,ail.com,123456,active
+user21@,ail.com,123456,inactive
