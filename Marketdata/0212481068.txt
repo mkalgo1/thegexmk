@@ -1,2 +1,2 @@
-email:
-password:
+email:service@mail.com
+password:service1234
