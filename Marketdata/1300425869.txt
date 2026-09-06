@@ -1,2 +1,0 @@
-email: john@mail.com
-password: 1234
