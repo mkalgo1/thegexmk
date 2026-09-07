@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NQ Executive Bias & Trading Plan</title>
+    <title>Nasdaq 100 Fundamental Report & Weekly Outlook</title>
+    <!-- Chart.js for Macro/Factor Impact visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -82,9 +83,9 @@
         }
 
         .spot-badge .value {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 700;
-            color: var(--primary-emerald);
+            color: #F6E05E;
         }
 
         .grid-layout {
@@ -126,7 +127,7 @@
         /* Chart Container */
         .chart-container {
             position: relative;
-            height: 400px;
+            height: 380px;
             width: 100%;
             margin-top: 10px;
         }
@@ -154,20 +155,25 @@
             background: rgba(16, 185, 129, 0.04);
         }
 
-        .call-wall { color: #FC8181; font-weight: 600; }
-        .put-wall { color: #68D391; font-weight: 600; }
-        .anchor-level { color: var(--primary-emerald); font-weight: 600; }
+        .neutral-tag { color: #F6E05E; font-weight: 600; }
+        .bearish-tag { color: #FC8181; font-weight: 600; }
 
-        .protocol-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
+        .bias-badge {
+            display: inline-block;
+            background: rgba(252, 129, 129, 0.12);
+            border: 1px solid #FC8181;
+            color: #FC8181;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 4px;
         }
 
-        @media (max-width: 768px) {
-            .protocol-grid {
-                grid-template-columns: 1fr;
-            }
+        .regime-text {
+            font-size: 0.938rem;
+            line-height: 1.6;
+            color: #CBD5E0;
         }
 
         .protocol-box {
@@ -190,24 +196,6 @@
             font-size: 0.875rem;
             color: #CBD5E0;
             line-height: 1.5;
-        }
-
-        .bias-badge {
-            display: inline-block;
-            background: rgba(16, 185, 129, 0.15);
-            border: 1px solid var(--primary-emerald);
-            color: var(--primary-emerald);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-
-        .regime-text {
-            font-size: 0.938rem;
-            line-height: 1.6;
-            color: #CBD5E0;
         }
 
         .interactive-controls {
@@ -264,101 +252,104 @@
         
         <header>
             <div class="title-group">
-                <h1>Nasdaq-100 (NQ) Executive Bias & Trading Plan</h1>
-                <p>24-48 Hour Tactical Market Structure Intelligence</p>
+                <h1>Nasdaq 100 Fundamental Report & Weekly Outlook</h1>
+                <p>Macroeconomic Conditions, Sentiment Analysis & Valuation Dynamics</p>
             </div>
             <div class="spot-badge">
-                <span class="label">Volume POC Reference</span>
-                <span class="value">29,575</span>
+                <span class="label">Forward P/E Multiple</span>
+                <span class="value">22.3x</span>
             </div>
         </header>
 
+        <!-- Macroeconomic & Fundamental Situation -->
         <div class="card card-full">
-            <h2>Executive Strategic Summary</h2>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-                <div>
-                    <span class="bias-badge">Executive Bias: Long (7/10 Conviction)</span>
-                </div>
-                <div class="regime-text">
-                    <p>Optimized for the next 24-48 hours, driven by supportive macro tailwinds, rising institutional long positioning, and a constructive technical structure.</p>
-                </div>
+            <h2>Macroeconomic & Fundamental Situation</h2>
+            <div class="regime-text" style="display: flex; flex-direction: column; gap: 14px;">
+                <p>The Nasdaq 100 enters September 2026 navigating a delicate macro crosscurrent defined by resilient growth metrics, sticky inflation pressures, and shifting monetary policy expectations.</p>
+                <p><strong>Labor Market & Rate Pressures:</strong> U.S. equities recently faced downward pressure following a hotter-than-expected August Nonfarm Payrolls (NFP) report. The resilience in employment—coupled with steady unemployment and slight wage gains—revived market expectations that the Federal Reserve may maintain a hawkish stance or consider further tightening to curb stubborn inflation.</p>
+                <p><strong>Treasury Yields & Energy Headwinds:</strong> The 10-year Treasury yield remains elevated near multi-month highs, increasing the discount rate applied to high-growth tech valuations and raising borrowing costs. Concurrently, lingering supply constraints and geopolitical tensions have kept energy and oil prices buoyant, adding persistent input-cost pressures for corporate margins and consumers.</p>
+                <p><strong>Valuation & The AI Infrastructure Reality:</strong> QQQ forward P/E multiples sit around 22.3x. While down from absolute historical peaks, this valuation leaves little room for operational missteps, heavily pricing in robust multi-year profit expansions tied to artificial intelligence. While the long-term adoption thesis for AI remains sound, the market is increasingly parsing the "physical clock"—the physical constraints of energy grids, data center build-outs, and semiconductor supply chains versus software-driven demand.</p>
             </div>
         </div>
 
+        <!-- Market Bias & Factor Assessment Grid -->
         <div class="grid-layout">
             
             <div class="card">
-                <h2>Key Drivers & Internals</h2>
-                <div class="regime-text" style="display: flex; flex-direction: column; gap: 12px;">
-                    <p><strong>Macro:</strong> 10-year yields flat at 4.15%; DXY softening slightly to 104.20 (net positive for tech); anchored inflation expectations (2.60% breakevens).</p>
-                    <p><strong>Flows & Sentiment:</strong> COT managed money net longs up 8% weekly; moderate OTM call buying; steady tech ETF inflows.</p>
-                    <p><strong>Technicals:</strong> NQ trading above rising 20-day (29,520), 50-day, and 200-day EMAs; volume concentrated around the 29,575 POC.</p>
+                <h2>Market Bias & Rationale</h2>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <div>
+                        <span class="bias-badge">Bias: Cautiously Bearish to Neutral</span>
+                    </div>
+                    <div class="regime-text">
+                        <p><strong>Rationale:</strong> Market participants will remain defensively positioned ahead of the late-week Producer Price Index (PPI) and Consumer Price Index (CPI) inflation prints. Any upside surprises in inflation will likely push Treasury yields higher and trigger a risk-off rotation in mega-cap technology. Conversely, a cooling inflation print could quickly spark a relief rally off structural support levels, though high macro sensitivity dictates a disciplined, data-dependent approach for the week.</p>
+                    </div>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Trading Plan & Execution Levels</h2>
-                <div class="protocol-grid" style="grid-template-columns: 1fr; gap: 12px;">
-                    <div class="protocol-box">
-                        <span class="protocol-title">Primary Long Setup</span>
-                        <div class="protocol-desc">
-                            <strong>Action:</strong> Enter on a break/hold above <strong>29,600</strong><br>
-                            <strong>Stop Loss:</strong> 29,450<br>
-                            <strong>Targets:</strong> 29,850 and 29,950
-                        </div>
-                    </div>
-
-                    <div class="protocol-box" style="border-color: #2A523D;">
-                        <span class="protocol-title" style="color: #FC8181;">Alternative Short Setup</span>
-                        <div class="protocol-desc">
-                            <strong>Action:</strong> Flip short only on a confirmed breakdown below <strong>29,450</strong><br>
-                            <strong>Stop Loss:</strong> 29,600<br>
-                            <strong>Target:</strong> 29,300
-                        </div>
-                    </div>
-                </div>
+                <h2>Weekly Factor Assessment Matrix</h2>
+                <table class="levels-table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Assessment Description</th>
+                            <th>Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Macro Data Schedule</strong></td>
+                            <td>High-impact releases (U.S. PPI on Thursday, CPI on Friday) will dictate short-term sentiment.</td>
+                            <td class="neutral-tag">Neutral-to-Cautious</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rate Expectations</strong></td>
+                            <td>Resilient labor data has increased sensitivity to incoming inflation prints, keeping rate-hike fears alive.</td>
+                            <td class="bearish-tag">Bearish Headwind</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Technical Structure</strong></td>
+                            <td>Short-term momentum has softened into a corrective phase, though major multi-week support zones remain intact.</td>
+                            <td class="neutral-tag">Consolidation / Conditional Support</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
         </div>
 
+        <!-- Visual Factor Impact Chart -->
         <div class="card card-full">
-            <h2>Tactical Level Distribution & Execution Zones</h2>
+            <h2>Fundamental Factor Sentiment Weighting</h2>
             <div class="chart-container">
-                <canvas id="gexChart"></canvas>
+                <canvas id="factorChart"></canvas>
             </div>
             <div class="interactive-controls" style="margin-top: 12px;">
-                <input type="text" class="input-field" placeholder="Enter custom NQ price node...">
-                <button class="btn btn-primary" id="btn_get_levels">Validate Node Matrix</button>
+                <input type="text" class="input-field" placeholder="Enter macroeconomic indicator to query...">
+                <button class="btn btn-primary" id="btn_query_macro">Query Economic Data Feed</button>
             </div>
         </div>
 
     </div>
 
+    <!-- Chart Configuration Script -->
     <script>
-        const ctx = document.getElementById('gexChart').getContext('2d');
+        const ctx = document.getElementById('factorChart').getContext('2d');
         
-        const levels = ['29,300 (Target Short)', '29,450 (Stop / Break)', '29,520 (20 EMA)', '29,575 (POC)', '29,600 (Trigger Long)', '29,850 (Target 1)', '29,950 (Target 2)'];
-        const values = [-45000, -25000, 35000, 65000, 75000, 85000, 95000];
+        const factors = ['Valuation Headwinds (22.3x P/E)', 'Treasury Yield Pressures', 'Labor Market Resilience', 'Technical Support Zones', 'Inflation Data Anticipation'];
+        const sentimentScores = [-65, -70, -40, 50, -55];
         
-        const backgroundColors = levels.map((lvl) => {
-            if (lvl.includes('Long') || lvl.includes('Target 1') || lvl.includes('Target 2')) return 'rgba(16, 185, 129, 0.8)';
-            if (lvl.includes('Short')) return 'rgba(252, 129, 129, 0.8)';
-            return '#1E3A2B';
-        });
-
-        const borderColors = levels.map((lvl) => {
-            if (lvl.includes('Long') || lvl.includes('Target 1') || lvl.includes('Target 2')) return '#10B981';
-            if (lvl.includes('Short')) return '#FC8181';
-            return '#2A523D';
-        });
+        const backgroundColors = sentimentScores.map(score => score < 0 ? 'rgba(252, 129, 129, 0.7)' : 'rgba(16, 185, 129, 0.7)');
+        const borderColors = sentimentScores.map(score => score < 0 ? '#FC8181' : '#10B981');
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: levels,
+                labels: factors,
                 datasets: [{
-                    label: 'Tactical Node Weight',
-                    data: values,
+                    label: 'Sentiment Impact Index',
+                    data: sentimentScores,
                     backgroundColor: backgroundColors,
                     borderColor: borderColors,
                     borderWidth: 1,
@@ -387,9 +378,10 @@
                         grid: { color: '#162E22', drawBorder: false },
                         ticks: {
                             color: '#A0AEC0',
-                            callback: function(value) { return Math.abs(value).toLocaleString(); },
                             font: { size: 11 }
-                        }
+                        },
+                        min: -100,
+                        max: 100
                     }
                 }
             }
