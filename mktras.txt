@@ -1,7 +1,0 @@
-{
-  "user_info": {
-    "name": "mktras",
-    "email": "adsfasd@mail.xom"
-  },
-  "chat": []
-}
