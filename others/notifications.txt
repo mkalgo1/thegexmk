@@ -1,3 +1,6 @@
 - New update [ 2026-09-07 02:13:53 ]
 1.7 coming soon
 
+- Results are fixed [ 2026-09-08 02:23:16 ]
+We’ve resolved the issue causing search delays and incorrect filtering. All search results are now fully accurate, and the app is running smoothly. Thank you for your patience while we optimized performance!
+
