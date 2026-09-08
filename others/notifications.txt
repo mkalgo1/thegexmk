@@ -1,3 +1,6 @@
 - App fixed bugs [ 2026-09-08 17:14:28 ]
 The app is now functionning well , all bugs and errors are fixed
 
+- Update [ 2026-09-08 17:15:54 ]
+Update your app for latest feautures...
+
