@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasdaq 100 Fundamental Report & Weekly Outlook</title>
-    <!-- Chart.js for Macro/Factor Impact visualization -->
+    <title>NQ & NDX Gamma Exposure (GEX) & Volatility Report</title>
+    <!-- Chart.js for GEX/Strike visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -52,6 +52,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
         }
 
         .title-group h1 {
@@ -66,10 +68,15 @@
             margin-top: 4px;
         }
 
+        .spot-badges-container {
+            display: flex;
+            gap: 12px;
+        }
+
         .spot-badge {
             background: var(--input-bg);
             border: 1px solid var(--primary-emerald);
-            padding: 10px 18px;
+            padding: 8px 14px;
             border-radius: 5px;
             display: flex;
             flex-direction: column;
@@ -77,7 +84,7 @@
         }
 
         .spot-badge .label {
-            font-size: 0.75rem;
+            font-size: 0.70rem;
             color: var(--text-muted);
             text-transform: uppercase;
         }
@@ -85,7 +92,7 @@
         .spot-badge .value {
             font-size: 1.125rem;
             font-weight: 700;
-            color: #F6E05E;
+            color: var(--primary-emerald);
         }
 
         .grid-layout {
@@ -127,7 +134,7 @@
         /* Chart Container */
         .chart-container {
             position: relative;
-            height: 380px;
+            height: 420px;
             width: 100%;
             margin-top: 10px;
         }
@@ -135,38 +142,43 @@
         .levels-table {
             width: 100%;
             border-collapse: collapse;
+            overflow-x: auto;
+            display: block;
         }
 
         .levels-table th, .levels-table td {
-            padding: 12px;
+            padding: 10px 12px;
             text-align: left;
             border-bottom: 1px solid var(--card-border);
-            font-size: 0.875rem;
+            font-size: 0.813rem;
+            white-space: nowrap;
         }
 
         .levels-table th {
             color: var(--text-muted);
             font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.75rem;
+            font-size: 0.70rem;
         }
 
         .levels-table tr:hover {
             background: rgba(16, 185, 129, 0.04);
         }
 
-        .neutral-tag { color: #F6E05E; font-weight: 600; }
-        .bearish-tag { color: #FC8181; font-weight: 600; }
+        .call-wall { color: #FC8181; font-weight: 600; }
+        .put-wall { color: #68D391; font-weight: 600; }
+        .zgf-level { color: #F6E05E; font-weight: 600; }
+        .spot-row { background: rgba(16, 185, 129, 0.08); font-weight: bold; }
 
         .bias-badge {
             display: inline-block;
-            background: rgba(252, 129, 129, 0.12);
-            border: 1px solid #FC8181;
-            color: #FC8181;
+            background: rgba(16, 185, 129, 0.15);
+            border: 1px solid var(--primary-emerald);
+            color: var(--primary-emerald);
             padding: 6px 14px;
             border-radius: 20px;
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             margin-bottom: 4px;
         }
 
@@ -174,6 +186,18 @@
             font-size: 0.938rem;
             line-height: 1.6;
             color: #CBD5E0;
+        }
+
+        .protocol-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .protocol-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .protocol-box {
@@ -252,82 +276,257 @@
         
         <header>
             <div class="title-group">
-                <h1>Nasdaq 100 Fundamental Report & Weekly Outlook</h1>
-                <p>Macroeconomic Conditions, Sentiment Analysis & Valuation Dynamics</p>
+                <h1>Nasdaq GEX & Volatility Intelligence Report</h1>
+                <p>New York Cash Session Real-Time Structure Analysis</p>
             </div>
-            <div class="spot-badge">
-                <span class="label">Forward P/E Multiple</span>
-                <span class="value">22.3x</span>
+            <div class="spot-badges-container">
+                <div class="spot-badge">
+                    <span class="label">NQ Spot</span>
+                    <span class="value">29,650</span>
+                </div>
+                <div class="spot-badge">
+                    <span class="label">NDX Spot</span>
+                    <span class="value">29,590</span>
+                </div>
             </div>
         </header>
 
-        <!-- Macroeconomic & Fundamental Situation -->
+        <!-- Executive Regime Summary Card -->
         <div class="card card-full">
-            <h2>Macroeconomic & Fundamental Situation</h2>
-            <div class="regime-text" style="display: flex; flex-direction: column; gap: 14px;">
-                <p>The Nasdaq 100 enters September 2026 navigating a delicate macro crosscurrent defined by resilient growth metrics, sticky inflation pressures, and shifting monetary policy expectations.</p>
-                <p><strong>Labor Market & Rate Pressures:</strong> U.S. equities recently faced downward pressure following a hotter-than-expected August Nonfarm Payrolls (NFP) report. The resilience in employment—coupled with steady unemployment and slight wage gains—revived market expectations that the Federal Reserve may maintain a hawkish stance or consider further tightening to curb stubborn inflation.</p>
-                <p><strong>Treasury Yields & Energy Headwinds:</strong> The 10-year Treasury yield remains elevated near multi-month highs, increasing the discount rate applied to high-growth tech valuations and raising borrowing costs. Concurrently, lingering supply constraints and geopolitical tensions have kept energy and oil prices buoyant, adding persistent input-cost pressures for corporate margins and consumers.</p>
-                <p><strong>Valuation & The AI Infrastructure Reality:</strong> QQQ forward P/E multiples sit around 22.3x. While down from absolute historical peaks, this valuation leaves little room for operational missteps, heavily pricing in robust multi-year profit expansions tied to artificial intelligence. While the long-term adoption thesis for AI remains sound, the market is increasingly parsing the "physical clock"—the physical constraints of energy grids, data center build-outs, and semiconductor supply chains versus software-driven demand.</p>
+            <h2>Executive Market Regime Summary</h2>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div>
+                    <span class="bias-badge">Current Regime: Positive Gamma</span>
+                </div>
+                <div class="regime-text">
+                    <p>The market is currently operating in a <strong>Positive Gamma</strong> regime[cite: 1], with Market Makers (MMs) generally long gamma, which dampens volatility and promotes mean-reverting price action[cite: 1]. Spot trades <strong>above</strong> the Zero Gamma Flip level for both NQ and NDX, indicating dealers are buying dips and selling rallies to maintain delta neutrality[cite: 1]. The dominant 0DTE liquidity magnet is centered around <strong>29,600</strong> for NQ and <strong>29,550</strong> for NDX[cite: 1].</p>
+                </div>
             </div>
         </div>
 
-        <!-- Market Bias & Factor Assessment Grid -->
+        <!-- Key Levels Matrix Grid -->
         <div class="grid-layout">
             
             <div class="card">
-                <h2>Market Bias & Rationale</h2>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    <div>
-                        <span class="bias-badge">Bias: Cautiously Bearish to Neutral</span>
-                    </div>
-                    <div class="regime-text">
-                        <p><strong>Rationale:</strong> Market participants will remain defensively positioned ahead of the late-week Producer Price Index (PPI) and Consumer Price Index (CPI) inflation prints. Any upside surprises in inflation will likely push Treasury yields higher and trigger a risk-off rotation in mega-cap technology. Conversely, a cooling inflation print could quickly spark a relief rally off structural support levels, though high macro sensitivity dictates a disciplined, data-dependent approach for the week.</p>
-                    </div>
+                <h2>GEX & Volatility Key Levels Matrix</h2>
+                <div style="overflow-x: auto;">
+                    <table class="levels-table">
+                        <thead>
+                            <tr>
+                                <th>Asset</th>
+                                <th>Spot</th>
+                                <th>Regime</th>
+                                <th>Call Wall</th>
+                                <th>Put Wall</th>
+                                <th>ZGF</th>
+                                <th>Vol Trigger</th>
+                                <th>0DTE Pin</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>NQ Futures</strong>[cite: 1]</td>
+                                <td>29,650[cite: 1]</td>
+                                <td>Positive[cite: 1]</td>
+                                <td class="call-wall">29,800[cite: 1]</td>
+                                <td class="put-wall">29,400[cite: 1]</td>
+                                <td class="zgf-level">29,550[cite: 1]</td>
+                                <td>29,300[cite: 1]</td>
+                                <td style="color:var(--primary-emerald); font-weight:600;">29,600[cite: 1]</td>
+                            </tr>
+                            <tr>
+                                <td><strong>NDX Index</strong>[cite: 1]</td>
+                                <td>29,590[cite: 1]</td>
+                                <td>Positive[cite: 1]</td>
+                                <td class="call-wall">29,750[cite: 1]</td>
+                                <td class="put-wall">29,350[cite: 1]</td>
+                                <td class="zgf-level">29,500[cite: 1]</td>
+                                <td>29,250[cite: 1]</td>
+                                <td style="color:var(--primary-emerald); font-weight:600;">29,550[cite: 1]</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Weekly Factor Assessment Matrix</h2>
-                <table class="levels-table">
-                    <thead>
-                        <tr>
-                            <th>Factor</th>
-                            <th>Assessment Description</th>
-                            <th>Impact</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Macro Data Schedule</strong></td>
-                            <td>High-impact releases (U.S. PPI on Thursday, CPI on Friday) will dictate short-term sentiment.</td>
-                            <td class="neutral-tag">Neutral-to-Cautious</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Rate Expectations</strong></td>
-                            <td>Resilient labor data has increased sensitivity to incoming inflation prints, keeping rate-hike fears alive.</td>
-                            <td class="bearish-tag">Bearish Headwind</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Technical Structure</strong></td>
-                            <td>Short-term momentum has softened into a corrective phase, though major multi-week support zones remain intact.</td>
-                            <td class="neutral-tag">Consolidation / Conditional Support</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <h2>Dealer Hedging Implications & Scenarios</h2>
+                <div class="protocol-grid" style="grid-template-columns: 1fr; gap: 12px;">
+                    <div class="protocol-box">
+                        <span class="protocol-title">Scenario A: Spot Above Gamma Flip</span>
+                        <div class="protocol-desc">
+                            NQ (29,650) and NDX (29,590) remain above ZGF. MMs engage in <strong>mean-reverting delta hedging</strong> (buying dips, selling rallies), containing price within the 29,800/29,400 bounds[cite: 1].
+                        </div>
+                    </div>
+
+                    <div class="protocol-box" style="border-color: #2A523D;">
+                        <span class="protocol-title" style="color: #FC8181;">Scenario B: Breakdown Below ZGF / Put Wall</span>
+                        <div class="protocol-desc">
+                            Breaching ZGF (NQ 29,550) transitions the market to <strong>Negative Gamma</strong>. Crossing Put Walls shifts MMs to momentum-chasing short gamma hedging, risking rapid acceleration toward Volatility Triggers[cite: 1].
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
 
-        <!-- Visual Factor Impact Chart -->
+        <!-- Strike-by-Strike GEX Table (NQ) -->
         <div class="card card-full">
-            <h2>Fundamental Factor Sentiment Weighting</h2>
+            <h2>Strike-by-Strike GEX & Volume Table (NQ Futures)</h2>
+            <div style="overflow-x: auto;">
+                <table class="levels-table">
+                    <thead>
+                        <tr>
+                            <th>Strike Price</th>
+                            <th>Level Type</th>
+                            <th>Net GEX ($/Pts)</th>
+                            <th>Call Vol</th>
+                            <th>Put Vol</th>
+                            <th>Futures Vol</th>
+                            <th>Open Interest (C / P)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>30,000</strong>[cite: 1]</td>
+                            <td>Strong Resistance[cite: 1]</td>
+                            <td>+$180M[cite: 1]</td>
+                            <td>18,500[cite: 1]</td>
+                            <td>2,100[cite: 1]</td>
+                            <td>1,500[cite: 1]</td>
+                            <td>125,000 / 15,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,900</strong>[cite: 1]</td>
+                            <td>Above Spot Level[cite: 1]</td>
+                            <td>+$120M[cite: 1]</td>
+                            <td>12,000[cite: 1]</td>
+                            <td>3,500[cite: 1]</td>
+                            <td>1,200[cite: 1]</td>
+                            <td>90,000 / 22,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,800</strong>[cite: 1]</td>
+                            <td class="call-wall">Call Wall[cite: 1]</td>
+                            <td>+$250M[cite: 1]</td>
+                            <td>25,000[cite: 1]</td>
+                            <td>4,200[cite: 1]</td>
+                            <td>2,000[cite: 1]</td>
+                            <td>180,000 / 30,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,750</strong>[cite: 1]</td>
+                            <td>Above Spot Level[cite: 1]</td>
+                            <td>+$90M[cite: 1]</td>
+                            <td>9,500[cite: 1]</td>
+                            <td>5,000[cite: 1]</td>
+                            <td>800[cite: 1]</td>
+                            <td>70,000 / 38,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,700</strong>[cite: 1]</td>
+                            <td>Above Spot Level[cite: 1]</td>
+                            <td>+$50M[cite: 1]</td>
+                            <td>7,000[cite: 1]</td>
+                            <td>6,500[cite: 1]</td>
+                            <td>750[cite: 1]</td>
+                            <td>55,000 / 45,000[cite: 1]</td>
+                        </tr>
+                        <tr class="spot-row">
+                            <td><strong>29,650</strong>[cite: 1]</td>
+                            <td style="color:var(--primary-emerald);">CURRENT SPOT PRICE[cite: 1]</td>
+                            <td>N/A[cite: 1]</td>
+                            <td>N/A[cite: 1]</td>
+                            <td>N/A[cite: 1]</td>
+                            <td>125,000[cite: 1]</td>
+                            <td>N/A[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,600</strong>[cite: 1]</td>
+                            <td style="color:var(--primary-emerald);">Above ZGF / 0DTE Pin[cite: 1]</td>
+                            <td>+$20M[cite: 1]</td>
+                            <td>8,000[cite: 1]</td>
+                            <td>7,800[cite: 1]</td>
+                            <td>900[cite: 1]</td>
+                            <td>60,000 / 58,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,550</strong>[cite: 1]</td>
+                            <td class="zgf-level">ZERO GAMMA FLIP[cite: 1]</td>
+                            <td>$0.00[cite: 1]</td>
+                            <td>6,000[cite: 1]</td>
+                            <td>6,000[cite: 1]</td>
+                            <td>700[cite: 1]</td>
+                            <td>48,000 / 48,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,500</strong>[cite: 1]</td>
+                            <td>Below Spot Level[cite: 1]</td>
+                            <td>-$30M[cite: 1]</td>
+                            <td>5,500[cite: 1]</td>
+                            <td>8,000[cite: 1]</td>
+                            <td>850[cite: 1]</td>
+                            <td>40,000 / 65,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,450</strong>[cite: 1]</td>
+                            <td>Below Spot Level[cite: 1]</td>
+                            <td>-$70M[cite: 1]</td>
+                            <td>4,000[cite: 1]</td>
+                            <td>10,500[cite: 1]</td>
+                            <td>950[cite: 1]</td>
+                            <td>30,000 / 80,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,400</strong>[cite: 1]</td>
+                            <td class="put-wall">Put Wall[cite: 1]</td>
+                            <td>-$150M[cite: 1]</td>
+                            <td>3,000[cite: 1]</td>
+                            <td>18,000[cite: 1]</td>
+                            <td>1,800[cite: 1]</td>
+                            <td>25,000 / 150,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,350</strong>[cite: 1]</td>
+                            <td>Below Put Wall[cite: 1]</td>
+                            <td>-$200M[cite: 1]</td>
+                            <td>2,500[cite: 1]</td>
+                            <td>22,000[cite: 1]</td>
+                            <td>1,600[cite: 1]</td>
+                            <td>20,000 / 170,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,300</strong>[cite: 1]</td>
+                            <td style="color:#FC8181; font-weight:600;">Volatility Trigger[cite: 1]</td>
+                            <td>-$280M[cite: 1]</td>
+                            <td>2,000[cite: 1]</td>
+                            <td>28,000[cite: 1]</td>
+                            <td>2,200[cite: 1]</td>
+                            <td>18,000 / 200,000[cite: 1]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,000</strong>[cite: 1]</td>
+                            <td>Strong Support[cite: 1]</td>
+                            <td>-$350M[cite: 1]</td>
+                            <td>1,500[cite: 1]</td>
+                            <td>35,000[cite: 1]</td>
+                            <td>2,500[cite: 1]</td>
+                            <td>10,000 / 250,000[cite: 1]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Visual GEX Profile Chart -->
+        <div class="card card-full">
+            <h2>Net GEX Exposure Profile ($ / Points)</h2>
             <div class="chart-container">
-                <canvas id="factorChart"></canvas>
+                <canvas id="gexProfileChart"></canvas>
             </div>
             <div class="interactive-controls" style="margin-top: 12px;">
-                <input type="text" class="input-field" placeholder="Enter macroeconomic indicator to query...">
-                <button class="btn btn-primary" id="btn_query_macro">Query Economic Data Feed</button>
+                <input type="text" class="input-field" placeholder="Query custom strike node...">
+                <button class="btn btn-primary" id="btn_query_strike">Calculate Strike GEX</button>
             </div>
         </div>
 
@@ -335,21 +534,21 @@
 
     <!-- Chart Configuration Script -->
     <script>
-        const ctx = document.getElementById('factorChart').getContext('2d');
+        const ctx = document.getElementById('gexProfileChart').getContext('2d');
         
-        const factors = ['Valuation Headwinds (22.3x P/E)', 'Treasury Yield Pressures', 'Labor Market Resilience', 'Technical Support Zones', 'Inflation Data Anticipation'];
-        const sentimentScores = [-65, -70, -40, 50, -55];
+        const strikes = ['29,000', '29,300', '29,350', '29,400', '29,450', '29,500', '29,550', '29,600', '29,650 (Spot)', '29,700', '29,750', '29,800', '29,900', '30,000'];
+        const gexValues = [-350, -280, -200, -150, -70, -30, 0, 20, 45, 50, 90, 250, 120, 180];
         
-        const backgroundColors = sentimentScores.map(score => score < 0 ? 'rgba(252, 129, 129, 0.7)' : 'rgba(16, 185, 129, 0.7)');
-        const borderColors = sentimentScores.map(score => score < 0 ? '#FC8181' : '#10B981');
+        const backgroundColors = gexValues.map(val => val < 0 ? 'rgba(252, 129, 129, 0.75)' : 'rgba(16, 185, 129, 0.75)');
+        const borderColors = gexValues.map(val => val < 0 ? '#FC8181' : '#10B981');
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: factors,
+                labels: strikes,
                 datasets: [{
-                    label: 'Sentiment Impact Index',
-                    data: sentimentScores,
+                    label: 'Net GEX ($M / pt)',
+                    data: gexValues,
                     backgroundColor: backgroundColors,
                     borderColor: borderColors,
                     borderWidth: 1,
@@ -366,22 +565,26 @@
                         titleColor: '#A0AEC0',
                         bodyColor: '#FFFFFF',
                         borderColor: '#1E3A2B',
-                        borderWidth: 1
+                        borderWidth: 1,
+                        callbacks: {
+                            label: function(context) {
+                                return ` Net GEX: $${context.raw}M/pt`;
+                            }
+                        }
                     }
                 },
                 scales: {
                     x: {
                         grid: { color: '#162E22', drawBorder: false },
-                        ticks: { color: '#A0AEC0', font: { size: 11 } }
+                        ticks: { color: '#A0AEC0', font: { size: 10 } }
                     },
                     y: {
                         grid: { color: '#162E22', drawBorder: false },
                         ticks: {
                             color: '#A0AEC0',
+                            callback: function(value) { return '$' + value + 'M'; },
                             font: { size: 11 }
-                        },
-                        min: -100,
-                        max: 100
+                        }
                     }
                 }
             }
