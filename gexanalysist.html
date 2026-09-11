@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NQ & NDX Gamma Exposure (GEX) & Volatility Report</title>
+    <title>NQ & NDX Gamma Exposure (GEX) Intelligence Report</title>
     <!-- Chart.js for GEX/Strike visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -299,7 +299,7 @@
                     <span class="bias-badge">Current Regime: Positive Gamma</span>
                 </div>
                 <div class="regime-text">
-                    <p>The market is currently operating in a <strong>Positive Gamma</strong> regime[cite: 1], with Market Makers (MMs) generally long gamma, which dampens volatility and promotes mean-reverting price action[cite: 1]. Spot trades <strong>above</strong> the Zero Gamma Flip level for both NQ and NDX, indicating dealers are buying dips and selling rallies to maintain delta neutrality[cite: 1]. The dominant 0DTE liquidity magnet is centered around <strong>29,600</strong> for NQ and <strong>29,550</strong> for NDX[cite: 1].</p>
+                    <p>The current market is operating in a <strong>Positive Gamma</strong> regime[cite: 2], indicating that Market Makers (MMs) are net long gamma, which dampens volatility and promotes mean-reverting price action[cite: 2]. Spot trades <strong>above</strong> the Zero Gamma Flip level, suggesting dealers are net short delta and will engage in dynamic delta hedging by buying dips and selling rallies[cite: 2]. The dominant 0DTE liquidity magnet centers around <strong>29,600</strong> for NQ and <strong>29,550</strong> for NDX[cite: 2].</p>
                 </div>
             </div>
         </div>
@@ -325,24 +325,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><strong>NQ Futures</strong>[cite: 1]</td>
-                                <td>29,650[cite: 1]</td>
-                                <td>Positive[cite: 1]</td>
-                                <td class="call-wall">29,800[cite: 1]</td>
-                                <td class="put-wall">29,400[cite: 1]</td>
-                                <td class="zgf-level">29,550[cite: 1]</td>
-                                <td>29,300[cite: 1]</td>
-                                <td style="color:var(--primary-emerald); font-weight:600;">29,600[cite: 1]</td>
+                                <td><strong>NQ Futures</strong>[cite: 2]</td>
+                                <td>29,650[cite: 2]</td>
+                                <td>Positive[cite: 2]</td>
+                                <td class="call-wall">29,950[cite: 2]</td>
+                                <td class="put-wall">29,350[cite: 2]</td>
+                                <td class="zgf-level">29,550[cite: 2]</td>
+                                <td>29,200[cite: 2]</td>
+                                <td style="color:var(--primary-emerald); font-weight:600;">29,600[cite: 2]</td>
                             </tr>
                             <tr>
-                                <td><strong>NDX Index</strong>[cite: 1]</td>
-                                <td>29,590[cite: 1]</td>
-                                <td>Positive[cite: 1]</td>
-                                <td class="call-wall">29,750[cite: 1]</td>
-                                <td class="put-wall">29,350[cite: 1]</td>
-                                <td class="zgf-level">29,500[cite: 1]</td>
-                                <td>29,250[cite: 1]</td>
-                                <td style="color:var(--primary-emerald); font-weight:600;">29,550[cite: 1]</td>
+                                <td><strong>NDX Index</strong>[cite: 2]</td>
+                                <td>29,590[cite: 2]</td>
+                                <td>Positive[cite: 2]</td>
+                                <td class="call-wall">29,900[cite: 2]</td>
+                                <td class="put-wall">29,300[cite: 2]</td>
+                                <td class="zgf-level">29,500[cite: 2]</td>
+                                <td>29,150[cite: 2]</td>
+                                <td style="color:var(--primary-emerald); font-weight:600;">29,550[cite: 2]</td>
                             </tr>
                         </tbody>
                     </table>
@@ -355,14 +355,14 @@
                     <div class="protocol-box">
                         <span class="protocol-title">Scenario A: Spot Above Gamma Flip</span>
                         <div class="protocol-desc">
-                            NQ (29,650) and NDX (29,590) remain above ZGF. MMs engage in <strong>mean-reverting delta hedging</strong> (buying dips, selling rallies), containing price within the 29,800/29,400 bounds[cite: 1].
+                            Trading above ZGF implies mean-reverting hedging[cite: 2]. Rallies toward Call Walls (NQ 29,950) face dealer selling, while dips toward Put Walls (NQ 29,350) find dealer support[cite: 2].
                         </div>
                     </div>
 
                     <div class="protocol-box" style="border-color: #2A523D;">
                         <span class="protocol-title" style="color: #FC8181;">Scenario B: Breakdown Below ZGF / Put Wall</span>
                         <div class="protocol-desc">
-                            Breaching ZGF (NQ 29,550) transitions the market to <strong>Negative Gamma</strong>. Crossing Put Walls shifts MMs to momentum-chasing short gamma hedging, risking rapid acceleration toward Volatility Triggers[cite: 1].
+                            Decisive breaks below ZGF (NQ 29,550) and Put Walls trigger <strong>short-gamma acceleration</strong>, forcing dealers to sell into falling prices toward Volatility Triggers (NQ 29,200)[cite: 2].
                         </div>
                     </div>
                 </div>
@@ -388,130 +388,157 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>30,000</strong>[cite: 1]</td>
-                            <td>Strong Resistance[cite: 1]</td>
-                            <td>+$180M[cite: 1]</td>
-                            <td>18,500[cite: 1]</td>
-                            <td>2,100[cite: 1]</td>
-                            <td>1,500[cite: 1]</td>
-                            <td>125,000 / 15,000[cite: 1]</td>
+                            <td><strong>30,000</strong>[cite: 2]</td>
+                            <td>Above Call Wall[cite: 2]</td>
+                            <td>-$150M[cite: 2]</td>
+                            <td>12,500[cite: 2]</td>
+                            <td>800[cite: 2]</td>
+                            <td>1,500[cite: 2]</td>
+                            <td>18,000 / 2,500[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,900</strong>[cite: 1]</td>
-                            <td>Above Spot Level[cite: 1]</td>
-                            <td>+$120M[cite: 1]</td>
-                            <td>12,000[cite: 1]</td>
-                            <td>3,500[cite: 1]</td>
-                            <td>1,200[cite: 1]</td>
-                            <td>90,000 / 22,000[cite: 1]</td>
+                            <td><strong>29,950</strong>[cite: 2]</td>
+                            <td class="call-wall">Call Wall[cite: 2]</td>
+                            <td>-$320M[cite: 2]</td>
+                            <td>28,000[cite: 2]</td>
+                            <td>1,200[cite: 2]</td>
+                            <td>2,800[cite: 2]</td>
+                            <td>45,000 / 4,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,800</strong>[cite: 1]</td>
-                            <td class="call-wall">Call Wall[cite: 1]</td>
-                            <td>+$250M[cite: 1]</td>
-                            <td>25,000[cite: 1]</td>
-                            <td>4,200[cite: 1]</td>
-                            <td>2,000[cite: 1]</td>
-                            <td>180,000 / 30,000[cite: 1]</td>
+                            <td><strong>29,900</strong>[cite: 2]</td>
+                            <td>Above Spot Level[cite: 2]</td>
+                            <td>-$180M[cite: 2]</td>
+                            <td>18,000[cite: 2]</td>
+                            <td>1,500[cite: 2]</td>
+                            <td>2,000[cite: 2]</td>
+                            <td>30,000 / 5,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,750</strong>[cite: 1]</td>
-                            <td>Above Spot Level[cite: 1]</td>
-                            <td>+$90M[cite: 1]</td>
-                            <td>9,500[cite: 1]</td>
-                            <td>5,000[cite: 1]</td>
-                            <td>800[cite: 1]</td>
-                            <td>70,000 / 38,000[cite: 1]</td>
+                            <td><strong>29,850</strong>[cite: 2]</td>
+                            <td>Above Spot Level[cite: 2]</td>
+                            <td>-$90M[cite: 2]</td>
+                            <td>15,000[cite: 2]</td>
+                            <td>1,800[cite: 2]</td>
+                            <td>1,800[cite: 2]</td>
+                            <td>25,000 / 6,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,700</strong>[cite: 1]</td>
-                            <td>Above Spot Level[cite: 1]</td>
-                            <td>+$50M[cite: 1]</td>
-                            <td>7,000[cite: 1]</td>
-                            <td>6,500[cite: 1]</td>
-                            <td>750[cite: 1]</td>
-                            <td>55,000 / 45,000[cite: 1]</td>
+                            <td><strong>29,800</strong>[cite: 2]</td>
+                            <td>Above Spot Level[cite: 2]</td>
+                            <td>+$50M[cite: 2]</td>
+                            <td>13,000[cite: 2]</td>
+                            <td>2,200[cite: 2]</td>
+                            <td>1,600[cite: 2]</td>
+                            <td>22,000 / 7,500[cite: 2]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,750</strong>[cite: 2]</td>
+                            <td>Above Spot Level[cite: 2]</td>
+                            <td>+$180M[cite: 2]</td>
+                            <td>11,000[cite: 2]</td>
+                            <td>2,800[cite: 2]</td>
+                            <td>1,400[cite: 2]</td>
+                            <td>19,000 / 9,000[cite: 2]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,700</strong>[cite: 2]</td>
+                            <td>Above Spot Level[cite: 2]</td>
+                            <td>+$250M[cite: 2]</td>
+                            <td>9,500[cite: 2]</td>
+                            <td>3,500[cite: 2]</td>
+                            <td>1,200[cite: 2]</td>
+                            <td>17,000 / 11,000[cite: 2]</td>
                         </tr>
                         <tr class="spot-row">
-                            <td><strong>29,650</strong>[cite: 1]</td>
-                            <td style="color:var(--primary-emerald);">CURRENT SPOT PRICE[cite: 1]</td>
-                            <td>N/A[cite: 1]</td>
-                            <td>N/A[cite: 1]</td>
-                            <td>N/A[cite: 1]</td>
-                            <td>125,000[cite: 1]</td>
-                            <td>N/A[cite: 1]</td>
+                            <td><strong>29,650</strong>[cite: 2]</td>
+                            <td style="color:var(--primary-emerald);">CURRENT SPOT PRICE[cite: 2]</td>
+                            <td>N/A[cite: 2]</td>
+                            <td>N/A[cite: 2]</td>
+                            <td>N/A[cite: 2]</td>
+                            <td>155,000[cite: 2]</td>
+                            <td>N/A[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,600</strong>[cite: 1]</td>
-                            <td style="color:var(--primary-emerald);">Above ZGF / 0DTE Pin[cite: 1]</td>
-                            <td>+$20M[cite: 1]</td>
-                            <td>8,000[cite: 1]</td>
-                            <td>7,800[cite: 1]</td>
-                            <td>900[cite: 1]</td>
-                            <td>60,000 / 58,000[cite: 1]</td>
+                            <td><strong>29,600</strong>[cite: 2]</td>
+                            <td style="color:var(--primary-emerald);">Above Zero Gamma Flip[cite: 2]</td>
+                            <td>+$300M[cite: 2]</td>
+                            <td>8,000[cite: 2]</td>
+                            <td>4,200[cite: 2]</td>
+                            <td>1,000[cite: 2]</td>
+                            <td>15,000 / 13,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,550</strong>[cite: 1]</td>
-                            <td class="zgf-level">ZERO GAMMA FLIP[cite: 1]</td>
-                            <td>$0.00[cite: 1]</td>
-                            <td>6,000[cite: 1]</td>
-                            <td>6,000[cite: 1]</td>
-                            <td>700[cite: 1]</td>
-                            <td>48,000 / 48,000[cite: 1]</td>
+                            <td><strong>29,550</strong>[cite: 2]</td>
+                            <td class="zgf-level">ZERO GAMMA FLIP[cite: 2]</td>
+                            <td>$0.00[cite: 2]</td>
+                            <td>7,000[cite: 2]</td>
+                            <td>5,000[cite: 2]</td>
+                            <td>900[cite: 2]</td>
+                            <td>13,000 / 15,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,500</strong>[cite: 1]</td>
-                            <td>Below Spot Level[cite: 1]</td>
-                            <td>-$30M[cite: 1]</td>
-                            <td>5,500[cite: 1]</td>
-                            <td>8,000[cite: 1]</td>
-                            <td>850[cite: 1]</td>
-                            <td>40,000 / 65,000[cite: 1]</td>
+                            <td><strong>29,500</strong>[cite: 2]</td>
+                            <td>Below Spot Level[cite: 2]</td>
+                            <td>-$150M[cite: 2]</td>
+                            <td>6,000[cite: 2]</td>
+                            <td>6,500[cite: 2]</td>
+                            <td>800[cite: 2]</td>
+                            <td>11,000 / 18,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,450</strong>[cite: 1]</td>
-                            <td>Below Spot Level[cite: 1]</td>
-                            <td>-$70M[cite: 1]</td>
-                            <td>4,000[cite: 1]</td>
-                            <td>10,500[cite: 1]</td>
-                            <td>950[cite: 1]</td>
-                            <td>30,000 / 80,000[cite: 1]</td>
+                            <td><strong>29,450</strong>[cite: 2]</td>
+                            <td>Below Spot Level[cite: 2]</td>
+                            <td>-$280M[cite: 2]</td>
+                            <td>5,000[cite: 2]</td>
+                            <td>8,000[cite: 2]</td>
+                            <td>700[cite: 2]</td>
+                            <td>9,000 / 22,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,400</strong>[cite: 1]</td>
-                            <td class="put-wall">Put Wall[cite: 1]</td>
-                            <td>-$150M[cite: 1]</td>
-                            <td>3,000[cite: 1]</td>
-                            <td>18,000[cite: 1]</td>
-                            <td>1,800[cite: 1]</td>
-                            <td>25,000 / 150,000[cite: 1]</td>
+                            <td><strong>29,400</strong>[cite: 2]</td>
+                            <td>Below Spot Level[cite: 2]</td>
+                            <td>-$400M[cite: 2]</td>
+                            <td>4,000[cite: 2]</td>
+                            <td>10,000[cite: 2]</td>
+                            <td>600[cite: 2]</td>
+                            <td>7,000 / 28,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,350</strong>[cite: 1]</td>
-                            <td>Below Put Wall[cite: 1]</td>
-                            <td>-$200M[cite: 1]</td>
-                            <td>2,500[cite: 1]</td>
-                            <td>22,000[cite: 1]</td>
-                            <td>1,600[cite: 1]</td>
-                            <td>20,000 / 170,000[cite: 1]</td>
+                            <td><strong>29,350</strong>[cite: 2]</td>
+                            <td class="put-wall">Put Wall[cite: 2]</td>
+                            <td>-$550M[cite: 2]</td>
+                            <td>3,000[cite: 2]</td>
+                            <td>15,000[cite: 2]</td>
+                            <td>500[cite: 2]</td>
+                            <td>5,000 / 40,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,300</strong>[cite: 1]</td>
-                            <td style="color:#FC8181; font-weight:600;">Volatility Trigger[cite: 1]</td>
-                            <td>-$280M[cite: 1]</td>
-                            <td>2,000[cite: 1]</td>
-                            <td>28,000[cite: 1]</td>
-                            <td>2,200[cite: 1]</td>
-                            <td>18,000 / 200,000[cite: 1]</td>
+                            <td><strong>29,300</strong>[cite: 2]</td>
+                            <td>Below Put Wall[cite: 2]</td>
+                            <td>-$700M[cite: 2]</td>
+                            <td>2,500[cite: 2]</td>
+                            <td>18,000[cite: 2]</td>
+                            <td>400[cite: 2]</td>
+                            <td>4,000 / 50,000[cite: 2]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,000</strong>[cite: 1]</td>
-                            <td>Strong Support[cite: 1]</td>
-                            <td>-$350M[cite: 1]</td>
-                            <td>1,500[cite: 1]</td>
-                            <td>35,000[cite: 1]</td>
-                            <td>2,500[cite: 1]</td>
-                            <td>10,000 / 250,000[cite: 1]</td>
+                            <td><strong>29,250</strong>[cite: 2]</td>
+                            <td>Below Put Wall[cite: 2]</td>
+                            <td>-$850M[cite: 2]</td>
+                            <td>2,000[cite: 2]</td>
+                            <td>22,000[cite: 2]</td>
+                            <td>300[cite: 2]</td>
+                            <td>3,000 / 60,000[cite: 2]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>29,200</strong>[cite: 2]</td>
+                            <td style="color:#FC8181; font-weight:600;">Volatility Trigger[cite: 2]</td>
+                            <td>-$1.1B[cite: 2]</td>
+                            <td>1,500[cite: 2]</td>
+                            <td>28,000[cite: 2]</td>
+                            <td>200[cite: 2]</td>
+                            <td>2,000 / 75,000[cite: 2]</td>
                         </tr>
                     </tbody>
                 </table>
@@ -536,8 +563,8 @@
     <script>
         const ctx = document.getElementById('gexProfileChart').getContext('2d');
         
-        const strikes = ['29,000', '29,300', '29,350', '29,400', '29,450', '29,500', '29,550', '29,600', '29,650 (Spot)', '29,700', '29,750', '29,800', '29,900', '30,000'];
-        const gexValues = [-350, -280, -200, -150, -70, -30, 0, 20, 45, 50, 90, 250, 120, 180];
+        const strikes = ['29,200', '29,250', '29,300', '29,350', '29,400', '29,450', '29,500', '29,550', '29,600', '29,650 (Spot)', '29,700', '29,750', '29,800', '29,850', '29,900', '29,950', '30,000'];
+        const gexValues = [-1100, -850, -700, -550, -400, -280, -150, 0, 300, 150, 250, 180, 50, -90, -180, -320, -150];
         
         const backgroundColors = gexValues.map(val => val < 0 ? 'rgba(252, 129, 129, 0.75)' : 'rgba(16, 185, 129, 0.75)');
         const borderColors = gexValues.map(val => val < 0 ? '#FC8181' : '#10B981');
@@ -568,7 +595,9 @@
                         borderWidth: 1,
                         callbacks: {
                             label: function(context) {
-                                return ` Net GEX: $${context.raw}M/pt`;
+                                const val = context.raw;
+                                const sign = val >= 0 ? '+' : '';
+                                return ` Net GEX: ${sign}$${val}M/pt`;
                             }
                         }
                     }
