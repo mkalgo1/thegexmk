@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NQ & NDX Gamma Exposure (GEX) Intelligence Report</title>
-    <!-- Chart.js for GEX/Strike visualization -->
+    <title>MKTRADEZ | Institutional Market Strategy & Quantitative Flow Report</title>
+    <!-- Chart.js for visualization -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         :root {
@@ -131,10 +131,9 @@
             align-items: center;
         }
 
-        /* Chart Container */
         .chart-container {
             position: relative;
-            height: 420px;
+            height: 380px;
             width: 100%;
             margin-top: 10px;
         }
@@ -222,51 +221,17 @@
             line-height: 1.5;
         }
 
-        .interactive-controls {
+        ul {
+            padding-left: 20px;
             display: flex;
-            gap: 12px;
-            margin-top: 8px;
+            flex-direction: column;
+            gap: 8px;
+            color: #CBD5E0;
+            font-size: 0.938rem;
         }
 
-        .btn {
-            background-color: var(--btn-fill);
-            color: #FFFFFF;
-            border: 1px solid #2A523D;
-            border-radius: 5px;
-            padding: 6px 12px;
-            font-size: 0.875rem;
-            cursor: pointer;
-            transition: background-color 180ms ease-in-out;
-        }
-
-        .btn:hover {
-            background-color: var(--btn-hover);
-        }
-
-        .btn-primary {
-            background-color: #10B981;
-            color: #04120A;
-            border: none;
-            font-weight: 600;
-        }
-
-        .btn-primary:hover {
-            background-color: #059669;
-        }
-
-        .input-field {
-            background-color: var(--input-bg);
-            border: 1px solid var(--input-border);
-            border-radius: 5px;
-            padding: 6px 10px;
-            color: #FFFFFF;
-            font-size: 0.875rem;
-            width: 100%;
-        }
-
-        .input-field:focus {
-            outline: none;
-            border-color: var(--primary-emerald);
+        li strong {
+            color: var(--text-primary);
         }
     </style>
 </head>
@@ -276,313 +241,172 @@
         
         <header>
             <div class="title-group">
-                <h1>Nasdaq GEX & Volatility Intelligence Report</h1>
-                <p>New York Cash Session Real-Time Structure Analysis</p>
+                <h1>MKTRADEZ | Institutional Market Strategy & Quantitative Flow Report</h1>
+                <p>Target Timestamp: September 15, 2026 | 03:22 ET &bull; CME Nasdaq 100 E-mini Futures (NQU26)</p>
             </div>
             <div class="spot-badges-container">
                 <div class="spot-badge">
-                    <span class="label">NQ Spot</span>
-                    <span class="value">29,650</span>
-                </div>
-                <div class="spot-badge">
-                    <span class="label">NDX Spot</span>
-                    <span class="value">29,590</span>
+                    <span class="label">Live Reference Spot</span>
+                    <span class="value">29,325.50</span>
                 </div>
             </div>
         </header>
 
         <!-- Executive Regime Summary Card -->
         <div class="card card-full">
-            <h2>Executive Market Regime Summary</h2>
+            <h2>Active Contract & Market Bias Summary</h2>
             <div style="display: flex; flex-direction: column; gap: 12px;">
                 <div>
-                    <span class="bias-badge">Current Regime: Positive Gamma</span>
+                    <span class="bias-badge">Definitive Directional Bias: BULLISH[cite: 3]</span>
                 </div>
                 <div class="regime-text">
-                    <p>The current market is operating in a <strong>Positive Gamma</strong> regime[cite: 2], indicating that Market Makers (MMs) are net long gamma, which dampens volatility and promotes mean-reverting price action[cite: 2]. Spot trades <strong>above</strong> the Zero Gamma Flip level, suggesting dealers are net short delta and will engage in dynamic delta hedging by buying dips and selling rallies[cite: 2]. The dominant 0DTE liquidity magnet centers around <strong>29,600</strong> for NQ and <strong>29,550</strong> for NDX[cite: 2].</p>
+                    <p><strong>Active Front-Month Contract:</strong> NQU26 (September 2026 Contract, Expiry: September 18, 2026)[cite: 3]. Active liquidity roll in progress between NQU26 and NQZ26 (December 2026); front-month volume remains concentrated in NQU26 through Wednesday's session, with roll spread trading at +142.50 points premium to NQZ26[cite: 3].</p>
                 </div>
             </div>
         </div>
 
-        <!-- Key Levels Matrix Grid -->
+        <!-- Grid Layout: Macro Drivers & Smart Money Positioning -->
         <div class="grid-layout">
             
             <div class="card">
-                <h2>GEX & Volatility Key Levels Matrix</h2>
-                <div style="overflow-x: auto;">
-                    <table class="levels-table">
-                        <thead>
-                            <tr>
-                                <th>Asset</th>
-                                <th>Spot</th>
-                                <th>Regime</th>
-                                <th>Call Wall</th>
-                                <th>Put Wall</th>
-                                <th>ZGF</th>
-                                <th>Vol Trigger</th>
-                                <th>0DTE Pin</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>NQ Futures</strong>[cite: 2]</td>
-                                <td>29,650[cite: 2]</td>
-                                <td>Positive[cite: 2]</td>
-                                <td class="call-wall">29,950[cite: 2]</td>
-                                <td class="put-wall">29,350[cite: 2]</td>
-                                <td class="zgf-level">29,550[cite: 2]</td>
-                                <td>29,200[cite: 2]</td>
-                                <td style="color:var(--primary-emerald); font-weight:600;">29,600[cite: 2]</td>
-                            </tr>
-                            <tr>
-                                <td><strong>NDX Index</strong>[cite: 2]</td>
-                                <td>29,590[cite: 2]</td>
-                                <td>Positive[cite: 2]</td>
-                                <td class="call-wall">29,900[cite: 2]</td>
-                                <td class="put-wall">29,300[cite: 2]</td>
-                                <td class="zgf-level">29,500[cite: 2]</td>
-                                <td>29,150[cite: 2]</td>
-                                <td style="color:var(--primary-emerald); font-weight:600;">29,550[cite: 2]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <h2>Institutional Macro & Fundamental Drivers</h2>
+                <ul>
+                    <li><strong>US Dollar Index (DXY):</strong> Trading at 99.58 (-0.24% session-to-date), reflecting post-CPI disinflationary positioning ahead of tomorrow’s FOMC rate decision[cite: 3].</li>
+                    <li><strong>US Rates & Yield Curve:</strong> US 10-Year Treasury Yields eased 4 bps to 3.72%, compressing equity risk premium discount rates for mega-cap growth[cite: 3].</li>
+                    <li><strong>Semiconductors & Hardware:</strong> NVDA (+1.4% pre-market implied) attracts aggressive prime-brokerage net buying following updated 2027 enterprise AI infrastructure spending forecasts[cite: 3].</li>
+                    <li><strong>Software & Cloud:</strong> MSFT and AMZN show solid institutional bid-side absorption near key daily anchored VWAP levels[cite: 3].</li>
+                </ul>
             </div>
 
             <div class="card">
-                <h2>Dealer Hedging Implications & Scenarios</h2>
-                <div class="protocol-grid" style="grid-template-columns: 1fr; gap: 12px;">
-                    <div class="protocol-box">
-                        <span class="protocol-title">Scenario A: Spot Above Gamma Flip</span>
-                        <div class="protocol-desc">
-                            Trading above ZGF implies mean-reverting hedging[cite: 2]. Rallies toward Call Walls (NQ 29,950) face dealer selling, while dips toward Put Walls (NQ 29,350) find dealer support[cite: 2].
-                        </div>
-                    </div>
-
-                    <div class="protocol-box" style="border-color: #2A523D;">
-                        <span class="protocol-title" style="color: #FC8181;">Scenario B: Breakdown Below ZGF / Put Wall</span>
-                        <div class="protocol-desc">
-                            Decisive breaks below ZGF (NQ 29,550) and Put Walls trigger <strong>short-gamma acceleration</strong>, forcing dealers to sell into falling prices toward Volatility Triggers (NQ 29,200)[cite: 2].
-                        </div>
-                    </div>
-                </div>
+                <h2>Smart Money Positioning & COT Flow</h2>
+                <ul>
+                    <li><strong>Asset Managers / Pension Funds:</strong> Net-long exposure sits at the 88th percentile over a 52-week lookback period (+142,500 contracts)[cite: 3].</li>
+                    <li><strong>Leveraged Funds (Hedge Funds & CTAs):</strong> CTAs operate near maximum long capacity; short covering by macro hedge funds accelerated (-18,200 contracts net-short unwound)[cite: 3].</li>
+                    <li><strong>Commercial Hedgers:</strong> Increasing short call overlay positions around the major psychological 29,500 strike to harvest elevated option volatility risk premia[cite: 3].</li>
+                    <li><strong>DOM & Microstructure:</strong> Deep passive bid liquidity clustered between 29,200.00 and 29,225.00; offer-side liquidity thins out above 29,380.00[cite: 3].</li>
+                </ul>
             </div>
 
         </div>
 
-        <!-- Strike-by-Strike GEX Table (NQ) -->
+        <!-- Options Flow & Gamma Exposure -->
         <div class="card card-full">
-            <h2>Strike-by-Strike GEX & Volume Table (NQ Futures)</h2>
+            <h2>Options Flow & Market Regime Analysis</h2>
+            <div class="protocol-grid">
+                <div class="protocol-box">
+                    <span class="protocol-title">Market Regime: Positive Gamma (+GEX)[cite: 3]</span>
+                    <div class="protocol-desc">
+                        Estimated Total Net GEX stands at <strong>+$4.8 Billion per 1% move</strong> with an implied 1-Day Volatility of 14.2% (Dampened)[cite: 3]. Options dealers operate as counter-cyclical liquidity providers (*buying dips, selling rallies*), favoring long-delta, range-expansion strategies[cite: 3].
+                    </div>
+                </div>
+
+                <div class="protocol-box" style="border-color: #2A523D;">
+                    <span class="protocol-title" style="color: #F6E05E;">Gamma Flip & Key Walls</span>
+                    <div class="protocol-desc">
+                        <strong>Gamma Flip Level:</strong> 29,180.00[cite: 3]. Sustained breakdown below 29,180.00 flips dealers to *Short Gamma*, triggering rapid deleveraging down toward the 29,000 Put Wall[cite: 3]. Above 29,180.00, upside bias remains intact[cite: 3].
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Intraday Levels Table -->
+        <div class="card card-full">
+            <h2>Primary Technical Map & Key Intraday Levels</h2>
             <div style="overflow-x: auto;">
                 <table class="levels-table">
                     <thead>
                         <tr>
-                            <th>Strike Price</th>
-                            <th>Level Type</th>
-                            <th>Net GEX ($/Pts)</th>
-                            <th>Call Vol</th>
-                            <th>Put Vol</th>
-                            <th>Futures Vol</th>
-                            <th>Open Interest (C / P)</th>
+                            <th>Level Classification</th>
+                            <th>Price Level</th>
+                            <th>Strategic Description</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>30,000</strong>[cite: 2]</td>
-                            <td>Above Call Wall[cite: 2]</td>
-                            <td>-$150M[cite: 2]</td>
-                            <td>12,500[cite: 2]</td>
-                            <td>800[cite: 2]</td>
-                            <td>1,500[cite: 2]</td>
-                            <td>18,000 / 2,500[cite: 2]</td>
+                            <td><strong>Major Resistance 2 (R2)</strong>[cite: 3]</td>
+                            <td class="call-wall">29,480.00 – 29,500.00[cite: 3]</td>
+                            <td>Structural Target & Institutional Supply Fence / Call Wall[cite: 3]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,950</strong>[cite: 2]</td>
-                            <td class="call-wall">Call Wall[cite: 2]</td>
-                            <td>-$320M[cite: 2]</td>
-                            <td>28,000[cite: 2]</td>
-                            <td>1,200[cite: 2]</td>
-                            <td>2,800[cite: 2]</td>
-                            <td>45,000 / 4,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,900</strong>[cite: 2]</td>
-                            <td>Above Spot Level[cite: 2]</td>
-                            <td>-$180M[cite: 2]</td>
-                            <td>18,000[cite: 2]</td>
-                            <td>1,500[cite: 2]</td>
-                            <td>2,000[cite: 2]</td>
-                            <td>30,000 / 5,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,850</strong>[cite: 2]</td>
-                            <td>Above Spot Level[cite: 2]</td>
-                            <td>-$90M[cite: 2]</td>
-                            <td>15,000[cite: 2]</td>
-                            <td>1,800[cite: 2]</td>
-                            <td>1,800[cite: 2]</td>
-                            <td>25,000 / 6,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,800</strong>[cite: 2]</td>
-                            <td>Above Spot Level[cite: 2]</td>
-                            <td>+$50M[cite: 2]</td>
-                            <td>13,000[cite: 2]</td>
-                            <td>2,200[cite: 2]</td>
-                            <td>1,600[cite: 2]</td>
-                            <td>22,000 / 7,500[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,750</strong>[cite: 2]</td>
-                            <td>Above Spot Level[cite: 2]</td>
-                            <td>+$180M[cite: 2]</td>
-                            <td>11,000[cite: 2]</td>
-                            <td>2,800[cite: 2]</td>
-                            <td>1,400[cite: 2]</td>
-                            <td>19,000 / 9,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,700</strong>[cite: 2]</td>
-                            <td>Above Spot Level[cite: 2]</td>
-                            <td>+$250M[cite: 2]</td>
-                            <td>9,500[cite: 2]</td>
-                            <td>3,500[cite: 2]</td>
-                            <td>1,200[cite: 2]</td>
-                            <td>17,000 / 11,000[cite: 2]</td>
+                            <td><strong>Major Resistance 1 (R1)</strong>[cite: 3]</td>
+                            <td>29,410.00[cite: 3]</td>
+                            <td>Overnight High & Daily Liquidity Pool[cite: 3]</td>
                         </tr>
                         <tr class="spot-row">
-                            <td><strong>29,650</strong>[cite: 2]</td>
-                            <td style="color:var(--primary-emerald);">CURRENT SPOT PRICE[cite: 2]</td>
-                            <td>N/A[cite: 2]</td>
-                            <td>N/A[cite: 2]</td>
-                            <td>N/A[cite: 2]</td>
-                            <td>155,000[cite: 2]</td>
-                            <td>N/A[cite: 2]</td>
+                            <td><strong>Live Reference Price</strong>[cite: 3]</td>
+                            <td style="color:var(--primary-emerald);">29,325.50[cite: 3]</td>
+                            <td>Current Active Market Reference[cite: 3]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,600</strong>[cite: 2]</td>
-                            <td style="color:var(--primary-emerald);">Above Zero Gamma Flip[cite: 2]</td>
-                            <td>+$300M[cite: 2]</td>
-                            <td>8,000[cite: 2]</td>
-                            <td>4,200[cite: 2]</td>
-                            <td>1,000[cite: 2]</td>
-                            <td>15,000 / 13,000[cite: 2]</td>
+                            <td><strong>Crucial Pivot</strong>[cite: 3]</td>
+                            <td class="zgf-level">29,280.00[cite: 3]</td>
+                            <td>Session Anchored VWAP / European Session Value Area High[cite: 3]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,550</strong>[cite: 2]</td>
-                            <td class="zgf-level">ZERO GAMMA FLIP[cite: 2]</td>
-                            <td>$0.00[cite: 2]</td>
-                            <td>7,000[cite: 2]</td>
-                            <td>5,000[cite: 2]</td>
-                            <td>900[cite: 2]</td>
-                            <td>13,000 / 15,000[cite: 2]</td>
+                            <td><strong>Major Support 1 (S1)</strong>[cite: 3]</td>
+                            <td class="put-wall">29,220.00[cite: 3]</td>
+                            <td>Prior Day Settlement & Institutional Bid Layer[cite: 3]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,500</strong>[cite: 2]</td>
-                            <td>Below Spot Level[cite: 2]</td>
-                            <td>-$150M[cite: 2]</td>
-                            <td>6,000[cite: 2]</td>
-                            <td>6,500[cite: 2]</td>
-                            <td>800[cite: 2]</td>
-                            <td>11,000 / 18,000[cite: 2]</td>
+                            <td><strong>Major Support 2 (S2)</strong>[cite: 3]</td>
+                            <td>29,150.00[cite: 3]</td>
+                            <td>Overnight Low & High-Volume Node (HVN)[cite: 3]</td>
                         </tr>
                         <tr>
-                            <td><strong>29,450</strong>[cite: 2]</td>
-                            <td>Below Spot Level[cite: 2]</td>
-                            <td>-$280M[cite: 2]</td>
-                            <td>5,000[cite: 2]</td>
-                            <td>8,000[cite: 2]</td>
-                            <td>700[cite: 2]</td>
-                            <td>9,000 / 22,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,400</strong>[cite: 2]</td>
-                            <td>Below Spot Level[cite: 2]</td>
-                            <td>-$400M[cite: 2]</td>
-                            <td>4,000[cite: 2]</td>
-                            <td>10,000[cite: 2]</td>
-                            <td>600[cite: 2]</td>
-                            <td>7,000 / 28,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,350</strong>[cite: 2]</td>
-                            <td class="put-wall">Put Wall[cite: 2]</td>
-                            <td>-$550M[cite: 2]</td>
-                            <td>3,000[cite: 2]</td>
-                            <td>15,000[cite: 2]</td>
-                            <td>500[cite: 2]</td>
-                            <td>5,000 / 40,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,300</strong>[cite: 2]</td>
-                            <td>Below Put Wall[cite: 2]</td>
-                            <td>-$700M[cite: 2]</td>
-                            <td>2,500[cite: 2]</td>
-                            <td>18,000[cite: 2]</td>
-                            <td>400[cite: 2]</td>
-                            <td>4,000 / 50,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,250</strong>[cite: 2]</td>
-                            <td>Below Put Wall[cite: 2]</td>
-                            <td>-$850M[cite: 2]</td>
-                            <td>2,000[cite: 2]</td>
-                            <td>22,000[cite: 2]</td>
-                            <td>300[cite: 2]</td>
-                            <td>3,000 / 60,000[cite: 2]</td>
-                        </tr>
-                        <tr>
-                            <td><strong>29,200</strong>[cite: 2]</td>
-                            <td style="color:#FC8181; font-weight:600;">Volatility Trigger[cite: 2]</td>
-                            <td>-$1.1B[cite: 2]</td>
-                            <td>1,500[cite: 2]</td>
-                            <td>28,000[cite: 2]</td>
-                            <td>200[cite: 2]</td>
-                            <td>2,000 / 75,000[cite: 2]</td>
+                            <td><strong>Gamma Flip / Put Wall</strong>[cite: 3]</td>
+                            <td style="color:#FC8181;">29,180.00 / 29,000.00[cite: 3]</td>
+                            <td>Regime Inflection Threshold & Lower Volatility Floor[cite: 3]</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <!-- Visual GEX Profile Chart -->
+        <!-- Visual Chart Card -->
         <div class="card card-full">
-            <h2>Net GEX Exposure Profile ($ / Points)</h2>
+            <h2>Intraday Structure & Price Level Hierarchy</h2>
             <div class="chart-container">
-                <canvas id="gexProfileChart"></canvas>
-            </div>
-            <div class="interactive-controls" style="margin-top: 12px;">
-                <input type="text" class="input-field" placeholder="Query custom strike node...">
-                <button class="btn btn-primary" id="btn_query_strike">Calculate Strike GEX</button>
+                <canvas id="intradayLevelsChart"></canvas>
             </div>
         </div>
 
     </div>
 
-    <!-- Chart Configuration Script -->
+    <!-- Chart Script -->
     <script>
-        const ctx = document.getElementById('gexProfileChart').getContext('2d');
+        const ctx = document.getElementById('intradayLevelsChart').getContext('2d');
         
-        const strikes = ['29,200', '29,250', '29,300', '29,350', '29,400', '29,450', '29,500', '29,550', '29,600', '29,650 (Spot)', '29,700', '29,750', '29,800', '29,850', '29,900', '29,950', '30,000'];
-        const gexValues = [-1100, -850, -700, -550, -400, -280, -150, 0, 300, 150, 250, 180, 50, -90, -180, -320, -150];
+        const labels = ['Put Wall (Floor)', 'Gamma Flip', 'Support 2 (S2)', 'Support 1 (S1)', 'Crucial Pivot', 'Live Price', 'Resistance 1 (R1)', 'Resistance 2 (R2)', 'Call Wall (Ceiling)'];
+        const prices = [29000, 29180, 29150, 29220, 29280, 29325.50, 29410, 29500, 29500];
         
-        const backgroundColors = gexValues.map(val => val < 0 ? 'rgba(252, 129, 129, 0.75)' : 'rgba(16, 185, 129, 0.75)');
-        const borderColors = gexValues.map(val => val < 0 ? '#FC8181' : '#10B981');
+        const backgroundColors = [
+            'rgba(104, 211, 145, 0.75)', 
+            'rgba(246, 224, 94, 0.75)', 
+            'rgba(104, 211, 145, 0.5)', 
+            'rgba(104, 211, 145, 0.75)', 
+            'rgba(246, 224, 94, 0.9)', 
+            'rgba(16, 185, 129, 1)', 
+            'rgba(252, 129, 129, 0.5)', 
+            'rgba(252, 129, 129, 0.75)', 
+            'rgba(252, 129, 129, 0.9)'
+        ];
 
         new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: strikes,
+                labels: labels,
                 datasets: [{
-                    label: 'Net GEX ($M / pt)',
-                    data: gexValues,
+                    label: 'Price Level',
+                    data: prices,
                     backgroundColor: backgroundColors,
-                    borderColor: borderColors,
+                    borderColor: '#162E22',
                     borderWidth: 1,
                     borderRadius: 4
                 }]
             },
             options: {
+                indexAxis: 'y',
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
@@ -595,25 +419,24 @@
                         borderWidth: 1,
                         callbacks: {
                             label: function(context) {
-                                const val = context.raw;
-                                const sign = val >= 0 ? '+' : '';
-                                return ` Net GEX: ${sign}$${val}M/pt`;
+                                return ` Level: ${context.raw.toLocaleString()}`;
                             }
                         }
                     }
                 },
                 scales: {
                     x: {
-                        grid: { color: '#162E22', drawBorder: false },
-                        ticks: { color: '#A0AEC0', font: { size: 10 } }
-                    },
-                    y: {
+                        min: 28900,
                         grid: { color: '#162E22', drawBorder: false },
                         ticks: {
                             color: '#A0AEC0',
-                            callback: function(value) { return '$' + value + 'M'; },
+                            callback: function(value) { return value.toLocaleString(); },
                             font: { size: 11 }
                         }
+                    },
+                    y: {
+                        grid: { color: '#162E22', drawBorder: false },
+                        ticks: { color: '#A0AEC0', font: { size: 11 } }
                     }
                 }
             }
