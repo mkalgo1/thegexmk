@@ -7,3 +7,20 @@ Update your app for latest feautures...
 - Alert [ 2026-09-12 16:00:04 ]
 All bugs and errors are fixed , app should work fine now
 
+- Orderflow Market Data connexions [ 2026-09-23 23:24:14 ]
+IMPORTANT NOTICE: Update Regarding Orderflow Tools Market Data Connections
+To our valued MKTRADEZ community,
+We are writing to inform you of an important update regarding our orderflow tools and market data connections.
+Due to the exceptionally high volume of active accounts and unprecedented demand, we are no longer able to provide these connections free of charge. Our data provider is currently experiencing heavy capacity constraints on our side, and to maintain the high performance, reliability, and speed you expect, we must transition to a paid subscription model.
+What You Need to Do
+If you wish to continue using your orderflow tools and market data connection without interruption, please complete your setup and payment via the official portal below:
+Set Up and Pay for Your Account Here
+Key Details
+• Continuity: Transitioning your account promptly will ensure you do not experience a disruption in your live data feeds or trading tools.
+• Support: If you encounter any issues during the setup or payment process, please reach out directly to our support team through our usual communication channels.
+We sincerely appreciate your understanding, cooperation, and continued support as we scale MKTRADEZ to better serve our trading community.
+Best regards, 
+The MKTRADEZ Team
+
+https://shorturl.at/XHEFL
+
