@@ -41,3 +41,36 @@ The MKTRADEZ Team
 
 https://shorturl.at/XHEFL
 
+- GEX MAP APP IS LIVE [ 2026-09-26 03:50:27 ]
+🚀 The GEXMAP APP
+Decode Market Maker Gamma Exposure. Trade with Institutional Precision.
+
+We are thrilled to announce that the GEXMAP APP is dropping soon! Built by traders, for traders, this tool cuts through market noise by giving you direct visual insight into where major options liquidity, volume, and institutional positioning reside.
+
+To celebrate the launch and give back to our community, the app will be dropping at an exclusive lower introductory price for a limited time.
+
+🔥 Core Features & What It Shows You
+Call & Put Walls: Instantly identify heavy concentration zones of Net Gamma Exposure. Know precisely where the massive Call Walls (upside resistance/ceilings) and Put Walls (downside support/floors) are sitting.
+
+Strike Levels & GEX Profile: Clean, color-coded visual breakdowns map out positive and negative gamma exposure across key strike prices, helping you spot structural market turning points.
+
+Market Reversal & Reaction Zones: Stop guessing where the market will turn. Use institutional gamma data to spot high-probability levels where price is likely to react, stall, or aggressively reverse.
+
+The Zero/Flip Line: Track the critical Gamma Flip point to understand market sentiment shifts and volatility triggers in real-time.
+
+💡 Why You Need the GEXMAP APP
+Market makers heavily influence price action through their hedging activities. When options expiration approaches, these gamma levels act as invisible magnets or brick walls. With the GEXMAP APP, you will no longer trade blind:
+
+Pinpoint exact entry and exit zones based on institutional positioning.
+
+Anticipate breakouts or rejections before they happen.
+
+Add a powerful, data-driven edge to your daily trading playbook.
+
+🗓 Launch Details
+Release Date: ALREADY RELAESED
+
+Pricing: Special community-discounted pricing available only at launch.
+
+Get your charts ready. Stay tuned for the official drop link and guide on how to secure your access at the lower introductory rate!
+
