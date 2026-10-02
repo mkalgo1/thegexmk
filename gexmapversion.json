@@ -1,6 +1,6 @@
 {
-  "version": "1.2",
-  "last_update": "2026-10-02",
+  "version": "1.4",
+  "last_update": "2026-10-03",
   "release_notes": "Added dual version and release date tracking for instant update detection.",
   "download_url": "https://raw.githubusercontent.com/mkalgo1/thegexmk/main/gexmap_v1.3.py"
 }
